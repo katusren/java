@@ -1,0 +1,12 @@
+package chapter09;
+
+public abstract class NoteBook extends Computer {
+
+	// 상속받은
+	@Override
+	public void display() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

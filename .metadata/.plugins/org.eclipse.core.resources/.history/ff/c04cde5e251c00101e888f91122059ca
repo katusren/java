@@ -1,0 +1,10 @@
+package chapter06;
+
+public class StudentInfoMain {
+
+	public static void main(String[] args) {
+		
+		StudentInfo_06 info = new StudentInfo_06(1004,"최백설",1,"일산");
+	}
+
+}

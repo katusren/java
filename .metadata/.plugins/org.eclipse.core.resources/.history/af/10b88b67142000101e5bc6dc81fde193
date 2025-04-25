@@ -1,0 +1,5 @@
+package chapter10.MultInterface;
+
+public interface Inter_Menu2 {
+
+}

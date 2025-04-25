@@ -1,0 +1,11 @@
+package chapter12.wrapper;
+
+public class IntegerMain_01 {
+
+	public static void main(String[] args) {
+		
+		Integer i = new Integer(100); // int i = 100;
+		
+	}
+
+}

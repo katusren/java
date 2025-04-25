@@ -1,0 +1,39 @@
+package chapter05;
+
+import javax.swing.JOptionPane;
+
+public class MyLotto_14 {
+
+	public static void main(String[] args) {
+
+		int number = Integer.parseInt(JOptionPane.showInputDialog("원하는 로또 구매 횟수를 입력하세요."));
+
+		int cnt = 0;
+		System.out.println("===== 이번주 로또 예상번호 =====");
+
+		while (number > cnt) {
+
+			System.out.println("[" + (cnt + 1) + "]: ");
+
+			int[] lotto = new int[6];
+
+			// 로또 6개 출력
+
+			cnt++;
+		}
+	}
+
+	// 중복 체크 메소드
+
+	public static boolean contains(int[] arr, int num) {
+
+		for (int i : arr) {
+			if (i == num) { // 배열방에 있는 숫자 == 방금 받은 숫자
+				return true;
+			}
+		}
+
+		return false; // 중복숫자 없음
+	}
+
+}

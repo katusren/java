@@ -1,0 +1,20 @@
+package chapter06;
+
+public class Bus_08 {
+
+	// 멤버변수
+	
+	int busNumber;
+	int passengerCount;
+	int money;
+	
+	// 생성자 오버로딩()
+	public Bus_08(int busNumber) {
+		this.busNumber = busNumber;
+	}
+	
+	public Bus_08() {
+		// TODO Auto-generated constructor stub
+	}
+	
+}

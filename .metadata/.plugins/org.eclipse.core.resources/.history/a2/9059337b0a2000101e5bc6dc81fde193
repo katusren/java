@@ -1,0 +1,5 @@
+package chapter10.MultInterface;
+
+public class Customer implements Buy, Sell {
+
+}

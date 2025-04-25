@@ -1,0 +1,9 @@
+package chapter06;
+
+public class StudentInfoMain {
+
+	public static void main(String[] args) {
+
+	}
+
+}

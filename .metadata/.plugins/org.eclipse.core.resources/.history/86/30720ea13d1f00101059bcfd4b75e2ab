@@ -1,0 +1,19 @@
+package chapter08;
+
+public class Manager extends Employee {
+
+	String department;
+
+	public Manager(String name, int salary, String department) {
+		super(name, salary);
+		this.department = department;
+	}
+
+	public void work() {
+		System.out.println(name + "직원이 일하고 있습니다.");
+	}
+
+	public void approveLeave(String employeeName) {
+		System.out.println(name + " 관리자가 " + employeeName + "의 휴가를 승인했습니다.");
+	}
+}

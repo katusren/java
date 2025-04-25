@@ -1,0 +1,13 @@
+package chapter10.MultInterface;
+
+public class Customer implements Buy, Sell {
+
+	@Override
+	public void sell() {
+	}
+
+	@Override
+	public void buy() {
+	}
+
+}

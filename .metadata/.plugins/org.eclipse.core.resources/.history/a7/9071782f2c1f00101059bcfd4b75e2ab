@@ -1,0 +1,14 @@
+package chapter08;
+
+public class DmbCellPhoneMain {
+
+	public static void main(String[] args) {
+
+		DmbCellPhone dmb = new DmbCellPhone(11, "Java폰", "검정");
+
+		System.out.print("모델: " + dmb.model);
+		System.out.print("색상: "+dmb.color);
+
+	}
+
+}

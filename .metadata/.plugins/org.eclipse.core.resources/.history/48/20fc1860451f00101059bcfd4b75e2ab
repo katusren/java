@@ -1,0 +1,11 @@
+package chapter08;
+
+public class ExampleMain {
+
+	public static void main(String[] args) {
+		Example_01 obj = new CalPlus();
+		
+		obj.getResult(15, 15);
+	}
+
+}

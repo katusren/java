@@ -1,0 +1,9 @@
+package chapter06;
+
+public class Example_person {
+
+	// 멤버 변수
+	String name;
+	float height;
+	float weight;
+}
