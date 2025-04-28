@@ -1,5 +1,0 @@
-package chapter10.Interface;
-
-public class InterTEST02 implements InterTest01{
-
-}

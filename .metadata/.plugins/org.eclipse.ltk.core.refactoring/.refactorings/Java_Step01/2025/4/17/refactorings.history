@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;chapter06.Bus_08&apos; to &apos;Bus&apos;&#x0D;&#x0A;- Original project: &apos;java_01&apos;&#x0D;&#x0A;- Original element: &apos;chapter06.Bus_08&apos;&#x0D;&#x0A;- Renamed element: &apos;chapter06.Bus&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Bus_08&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;chapter06{Bus_08.java[Bus_08" matchStrategy="1" name="Bus" qualified="false" references="true" similarDeclarations="false" stamp="1745197188409" textual="false" version="1.0"/>
-</session>

@@ -1,5 +1,0 @@
-package chapter08;
-
-public class CalPlus extends Example_01 {
-
-}
