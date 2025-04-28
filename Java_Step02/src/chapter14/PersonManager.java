@@ -65,10 +65,11 @@ public class PersonManager {
                         p = it.next();
 
                         System.out.print("이름: " + p.getName());
-                        System.out.print("나이: " + p.getAge());
-                        System.out.print("전화번호: " + p.getTel());
+                        System.out.print("\t나이: " + p.getAge());
+                        System.out.print("\t전화번호: " + p.getTel() + "\n");
                         System.out.println("-----------------------");
                     }
+                    break;
                 }
                 default:
                     System.out.println("프로그램 종료");
