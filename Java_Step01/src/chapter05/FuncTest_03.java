@@ -1,4 +1,4 @@
-package Chapter05;
+package chapter05;
 
 import javax.swing.JOptionPane;
 
@@ -44,4 +44,4 @@ public class FuncTest_03 {
 // DATA 영역(Static Area) -> 프로그램이 실행될때 미리 할당되는 메모리
 // Heap 영역(동적 메모리)->new 등을 통해서 생성된 객체
 // Stack 영역(메서드 호출/종료) -> 지역변수(블록 내에서 사용하는 변수), 매개변수
-// 
+//

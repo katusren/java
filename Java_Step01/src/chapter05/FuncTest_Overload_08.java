@@ -1,4 +1,4 @@
-package Chapter05;
+package chapter05;
 
 //Overload : 덮어썼다. -> 매개변수가 같으면 절대 안된다.
 public class FuncTest_Overload_08 {
