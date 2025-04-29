@@ -6,13 +6,13 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class LotteryGame extends JFrame {
+public class testgame extends JFrame {
     private JPanel[] cellPanels = new JPanel[9];
     private JTextField[] nameFields = new JTextField[9];
     private JLabel[] resultLabels = new JLabel[9];
     private JButton startButton = new JButton("게임시작");
 
-    public LotteryGame() {
+    public testgame() {
         setTitle("이름 추첨 게임");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(450, 600); // 창의 기본 사이즈
@@ -108,6 +108,6 @@ public class LotteryGame extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new LotteryGame());
+        SwingUtilities.invokeLater(() -> new testgame());
     }
 }
