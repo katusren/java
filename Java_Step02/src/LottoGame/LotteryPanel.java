@@ -4,76 +4,94 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Collections;
 
-// 전체 게임판을 관리하는 클래스
+// 메인 게임 패널 클래스
 public class LotteryPanel extends JPanel {
-    private LotteryCell[] cells = new LotteryCell[9]; // 9개의 셀
+    private ArrayList<LotteryCell> cells; // 9개의 셀을 담을 리스트
     private JButton startButton; // 게임 시작 버튼
 
-    // 생성자 : 게임판 초기화
+    // 생성자
     public LotteryPanel() {
-        setLayout(new BorderLayout()); // 전체 레이아웃 설정
+        setLayout(new BorderLayout(10, 10)); // 전체 레이아웃 설정
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // 여백 추가
 
-        // 그리드(3x3) 패널 생성
-        JPanel gridPanel = new JPanel(new GridLayout(3, 3, 10, 10));
-        gridPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // 바깥 여백
+        // 셀들을 담을 패널 (3x3 그리드)
+        JPanel gridPanel = new JPanel(new GridLayout(3, 3, 5, 5));
+        cells = new ArrayList<>();
 
-        // 9개의 셀 생성 후 그리드에 추가
+        // 9개의 셀을 생성하여 그리드에 추가
         for (int i = 0; i < 9; i++) {
-            cells[i] = new LotteryCell();
-            gridPanel.add(cells[i]);
+            LotteryCell cell = new LotteryCell();
+            cells.add(cell);
+            gridPanel.add(cell);
         }
 
-        // 게임 시작 버튼 생성
-        startButton = new JButton("게임시작");
+        add(gridPanel, BorderLayout.CENTER); // 그리드 패널은 중앙에 배치
+
+        // ====== 아래쪽 버튼 영역 ======
+        startButton = new JButton("게임시작"); // 시작 버튼 생성
+
+        // 시작 버튼 클릭 시 실행될 이벤트
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                startLottery(); // 버튼 클릭 시 추첨 실행
+                startLottery(); // 추첨 시작
             }
         });
 
-        // 구성 요소를 패널에 추가
-        add(gridPanel, BorderLayout.CENTER); // 셀 그리드는 가운데
-        JPanel bottomPanel = new JPanel(); // 버튼을 위한 패널
-        bottomPanel.add(startButton);
-        add(bottomPanel, BorderLayout.SOUTH); // 버튼은 아래
+        // 종료 버튼 생성
+        JButton exitButton = new JButton("종료");
+
+        // 종료 버튼 클릭 시 프로그램 종료
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0); // 종료 명령
+            }
+        });
+
+        // 버튼들을 담을 패널
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.add(startButton); // 게임시작 버튼 추가
+        bottomPanel.add(exitButton); // 종료 버튼 추가
+        add(bottomPanel, BorderLayout.SOUTH); // 버튼 패널은 아래쪽에 배치
     }
 
-    // 게임을 시작하는 메소드
+    // 추첨 실행 메소드
     private void startLottery() {
-        ArrayList<Integer> enteredIndexes = new ArrayList<>(); // 이름이 입력된 셀 인덱스 모음
+        // 입력된 이름들을 모아 저장
+        ArrayList<LotteryCell> validCells = new ArrayList<>();
 
-        // 이름이 입력된 셀만 수집
-        for (int i = 0; i < 9; i++) {
-            String name = cells[i].getNameText();
-            if (!name.isEmpty() && !name.equals("이름입력")) { // 빈칸과 기본 텍스트 제외
-                enteredIndexes.add(i);
+        for (LotteryCell cell : cells) {
+            String name = cell.getNameText();
+            // "이름입력" 상태이거나 빈칸은 무시
+            if (!name.isEmpty() && !name.equals("이름입력")) {
+                validCells.add(cell);
             }
         }
 
-        // 입력된 이름이 하나도 없는 경우
-        if (enteredIndexes.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "이름을 하나 이상 입력하세요!");
+        // 이름이 2명 이상일 때만 실행
+        if (validCells.size() < 2) {
+            JOptionPane.showMessageDialog(this, "최소 2명 이상 이름을 입력해주세요!");
             return;
         }
 
-        // 랜덤으로 당첨자 선택
-        Random rand = new Random();
-        int winnerIndex = enteredIndexes.get(rand.nextInt(enteredIndexes.size())); // 무작위 선택
+        // 모든 셀 초기화 (이전 결과 제거)
+        for (LotteryCell cell : cells) {
+            cell.reset();
+        }
 
-        // 각 셀 결과 설정
-        for (int i = 0; i < 9; i++) {
-            if (enteredIndexes.contains(i)) { // 이름 입력된 셀만
-                if (i == winnerIndex) { // 당첨자
-                    cells[i].setResult("당첨!", Color.YELLOW, 18);
-                } else { // 꽝
-                    cells[i].setResult("꽝", Color.LIGHT_GRAY, 16);
-                }
-            } else {
-                cells[i].reset(); // 입력 안된 셀은 초기화
-            }
+        // 당첨자를 무작위로 1명 선정
+        Collections.shuffle(validCells);
+        LotteryCell winner = validCells.get(0);
+
+        // 당첨자 표시
+        winner.setResult("당첨!", Color.YELLOW, 25);
+
+        // 나머지는 꽝 처리
+        for (int i = 1; i < validCells.size(); i++) {
+            validCells.get(i).setResult("꽝", Color.LIGHT_GRAY, 14);
         }
     }
 }

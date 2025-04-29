@@ -2,6 +2,7 @@ package LottoGame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 // 하나의 셀(패널)을 담당하는 클래스
 public class LotteryCell extends JPanel {
@@ -23,6 +24,28 @@ public class LotteryCell extends JPanel {
         // 이름 입력 필드 설정
         nameField = new JTextField("이름입력"); // 기본 텍스트
         nameField.setHorizontalAlignment(JTextField.CENTER); // 텍스트 가운데 정렬
+        nameField.setForeground(Color.GRAY); // 기본 안내문구처럼 연한 색 설정
+
+        // placeholder처럼 동작하도록 포커스 이벤트 추가
+        nameField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // 클릭했을 때 기본 텍스트가 보이면 지운다
+                if (nameField.getText().equals("이름입력")) {
+                    nameField.setText("");
+                    nameField.setForeground(Color.BLACK); // 입력 색상으로 변경
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // 커서가 빠져나갔는데 아무것도 없으면 다시 기본 텍스트로
+                if (nameField.getText().isEmpty()) {
+                    nameField.setText("이름입력");
+                    nameField.setForeground(Color.GRAY); // 연한 회색
+                }
+            }
+        });
 
         // 패널에 컴포넌트 추가
         add(resultLabel, BorderLayout.CENTER); // 결과 라벨은 가운데

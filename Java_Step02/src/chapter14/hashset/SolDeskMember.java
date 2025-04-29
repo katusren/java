@@ -26,6 +26,22 @@ public class SolDeskMember {
         this.memberName = memberName;
     }
 
+    // 물리적 주소
+    @Override
+    public int hashCode() {
+        return memberId;
+    }
+
+    // 논리적 주소
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof SolDeskMember) {
+            SolDeskMember member = (SolDeskMember) obj;
+            return this.memberId == member.memberId || this.memberName.equals(member.memberName);
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return memberName + "회원님의 아이디는 " + memberId + "입니다.";
