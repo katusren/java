@@ -1,0 +1,19 @@
+package chapter16;
+
+public class ExceptionMain_02 {
+
+    public static void main(String[] args) {
+
+        int var = 50;
+        int data = 0;
+
+        try {
+            System.out.println(var / data);
+        } catch (Exception e) {
+            System.out.println("예외처리");
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("program end");
+    }
+}
