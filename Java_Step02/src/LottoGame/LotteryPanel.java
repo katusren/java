@@ -87,11 +87,13 @@ public class LotteryPanel extends JPanel {
         LotteryCell winner = validCells.get(0);
 
         // 당첨자 표시
-        winner.setResult("당첨!", Color.YELLOW, 25);
+        //winner.setResult("당첨!", Color.YELLOW, 25);
+        winner.setResult("당첨!", Color.YELLOW, 25, "chest.png");
 
         // 나머지는 꽝 처리
         for (int i = 1; i < validCells.size(); i++) {
-            validCells.get(i).setResult("꽝", Color.LIGHT_GRAY, 14);
+            //validCells.get(i).setResult("꽝", Color.LIGHT_GRAY, 14);
+            validCells.get(i).setResult("꽝", Color.LIGHT_GRAY, 14, "skull.png");
         }
     }
 }

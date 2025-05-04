@@ -8,7 +8,7 @@ public class LotteryGameMain {
         // GUI 업데이트는 이벤트 디스패치 스레드에서 실행
         SwingUtilities.invokeLater(() -> {
             // 메인 프레임 생성
-            JFrame frame = new JFrame("이름 추첨 게임");
+            JFrame frame = new JFrame("행운의 열쇠는 누구에게?");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(450, 600); // 창 크기 설정
             frame.setResizable(false); // 창 크기 조정 불가
