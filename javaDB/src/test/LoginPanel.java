@@ -78,41 +78,19 @@ public class LoginPanel extends JPanel {
         JLabel signupLabel = new JLabel("회원가입"); // 회원가입
         signupLabel.setForeground(Color.BLUE.darker()); // 파란색
         signupLabel.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 클릭 가능 커서
+
+        // 회원가입 라벨을 클릭하면 현재 로그인 패널이 속한 최상위 프레임을 부모로 하여
+        // JoinDialog(회원가입 창)를 모달로 띄움
         signupLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(LoginPanel.this), "회원가입", true); // true
-                dialog.setSize(300, 200);
-                dialog.setLocationRelativeTo(null); // 화면 중앙
-                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-
-                JPanel panel = new JPanel();
-                panel.add(new JLabel("회원가입 창입니다."));
-                dialog.add(panel);
-
-                dialog.setVisible(true);
+                new JoinDialog((JFrame) SwingUtilities.getWindowAncestor(LoginPanel.this));
             }
         });
 
         JLabel forgotLabel = new JLabel("아이디&비밀번호 찾기"); // 아이디&비밀번호 찾기
         forgotLabel.setForeground(Color.BLUE.darker()); // 파란색
         forgotLabel.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 클릭 가능 커서
-        forgotLabel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(LoginPanel.this), "아이디&비밀번호 찾기",
-                        true); // true
-                dialog.setSize(300, 200);
-                dialog.setLocationRelativeTo(null); // 화면 중앙
-                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-
-                JPanel panel = new JPanel();
-                panel.add(new JLabel("찾기 창입니다."));
-                dialog.add(panel);
-
-                dialog.setVisible(true);
-            }
-        });
 
         linkPanel.add(signupLabel); // 링크 추가
         linkPanel.add(forgotLabel); // 링크 추가
