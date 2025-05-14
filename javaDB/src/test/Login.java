@@ -1,15 +1,27 @@
 package test;
 
 import javax.swing.*;
+
+import config.BaseFrame;
+
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoginPanel extends JPanel {
+/*
+ * 생성자 : 문원주
+ * 생성일 : 25.05.17
+ * 파일명 : Login.java
+ * 수정자 : 
+ * 수정일 :
+ * 설명 : 로그인 기본 프레임 설정
+ */
+
+public class Login extends JPanel {
     private JTextField usernameField; // 사용자 이름 입력 필드
     private JPasswordField passwordField; // 비밀번호 입력 필드
     private JLabel messageLabel; // 오류 메시지 출력용 라벨
 
-    public LoginPanel() {
+    public Login() {
         setLayout(new GridBagLayout()); // 레이아웃 설정
         setBackground(Color.WHITE); // 배경 흰색
 
@@ -84,13 +96,21 @@ public class LoginPanel extends JPanel {
         signupLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                new JoinDialog((JFrame) SwingUtilities.getWindowAncestor(LoginPanel.this));
+                // new JoinDialog((JFrame) SwingUtilities.getWindowAncestor(Login.this));
             }
         });
 
         JLabel forgotLabel = new JLabel("아이디&비밀번호 찾기"); // 아이디&비밀번호 찾기
         forgotLabel.setForeground(Color.BLUE.darker()); // 파란색
         forgotLabel.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 클릭 가능 커서
+        // 회원가입 라벨을 클릭하면 현재 로그인 패널이 속한 최상위 프레임을 부모로 하여
+        // ForgotDialog(아이디&비밀번호 찾기창)를 모달로 띄움
+        forgotLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // new ForgotDialog((JFrame) SwingUtilities.getWindowAncestor(Login.this));
+            }
+        });
 
         linkPanel.add(signupLabel); // 링크 추가
         linkPanel.add(forgotLabel); // 링크 추가
@@ -99,26 +119,31 @@ public class LoginPanel extends JPanel {
 
     // 로그인 시도 메서드
     private void attemptLogin() {
-        String id = usernameField.getText(); // 아이디 입력값
-        String pw = new String(passwordField.getPassword()); // 비밀번호 입력값
+        // 사용자로부터 입력받은 아이디와 비밀번호를 가져오고, 앞뒤 공백을 제거
+        String id = usernameField.getText().trim();
+        String pw = new String(passwordField.getPassword()).trim();
 
-        if (id.equals("user") && pw.equals("1234")) { // 임시 로그인 성공 조건
-            messageLabel.setText(""); // 메시지 제거
-            JOptionPane.showMessageDialog(this, "로그인 성공!"); // 알림창
-            // TODO: 통계 페이지 전환 연결
+        // 아이디나 비밀번호가 비어있는지 체크
+        // 비어 있다면, 오류 메시지를 출력하고 로그인 절차를 종료
+        if (id.isEmpty() || pw.isEmpty()) {
+            messageLabel.setText("아이디와 비밀번호를 모두 입력하세요."); // 오류 메시지 출력
+            return;
+        }
+
+        UserDAO dao = new UserDAO(); // UserDAO 객체 생성 후, 로그인 시도
+        if (dao.login(id, pw)) {
+            messageLabel.setText(""); // 로그인 성공 시 메시지 초기화
+            JOptionPane.showMessageDialog(this, "로그인 성공!");
         } else {
-            messageLabel.setText("아이디 또는 비밀번호가 잘못되었습니다."); // 오류 메시지
+            messageLabel.setText("아이디 또는 비밀번호가 잘못되었습니다.");
         }
     }
 
     // 테스트용 메인 메서드
     public static void main(String[] args) {
-        JFrame frame = new JFrame("DAY-KEEPER"); // 프레임 생성
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 종료 설정
-        frame.setSize(400, 380); // 크기 (조금 더 여유롭게 위 공간 확보)
-        frame.setResizable(false); // 크기 조절 불가
-        frame.setLocationRelativeTo(null); // 화면 중앙 배치
-        frame.setContentPane(new LoginPanel()); // 패널 삽입
-        frame.setVisible(true); // 표시
+        BaseFrame frame = new BaseFrame(); // 기본 프레임 생성
+        frame.setContentPane(new Login()); // Login 패널 삽입
+        frame.setVisible(true); // 화면에 표시
     }
+
 }
