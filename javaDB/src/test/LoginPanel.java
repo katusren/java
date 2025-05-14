@@ -97,6 +97,22 @@ public class LoginPanel extends JPanel {
         JLabel forgotLabel = new JLabel("아이디&비밀번호 찾기"); // 아이디&비밀번호 찾기
         forgotLabel.setForeground(Color.BLUE.darker()); // 파란색
         forgotLabel.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 클릭 가능 커서
+        forgotLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(LoginPanel.this), "아이디&비밀번호 찾기",
+                        true); // true
+                dialog.setSize(300, 200);
+                dialog.setLocationRelativeTo(null); // 화면 중앙
+                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+
+                JPanel panel = new JPanel();
+                panel.add(new JLabel("찾기 창입니다."));
+                dialog.add(panel);
+
+                dialog.setVisible(true);
+            }
+        });
 
         linkPanel.add(signupLabel); // 링크 추가
         linkPanel.add(forgotLabel); // 링크 추가

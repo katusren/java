@@ -1,0 +1,8 @@
+{
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.dependency.syncWithFolderExplorer": true,
+    "java.project.explorer.showNonJavaResources": false,
+    "java.project.referencedLibraries": [
+        "Java_Step02/ojdbc8.jar"
+    ]
+}

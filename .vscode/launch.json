@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "UserMain_06",
+            "request": "launch",
+            "mainClass": "chapter19.UserMain_06",
+            "projectName": "Java_Step02"
+        },
+        {
+            "type": "java",
+            "name": "Run Any Java File",
+            "request": "launch",
+            "mainClass": "${fileBasenameNoExtension}",
+            "classPaths": [
+                "Java_Step02/bin",
+                "Java_Step02/ojdbc8.jar"
+            ]
+        }
+    ]
+}
