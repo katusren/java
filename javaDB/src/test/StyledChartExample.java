@@ -55,7 +55,6 @@ public class StyledChartExample extends JFrame {
         // 제목 폰트 및 색상
         chart.getTitle().setPaint(new Color(30, 100, 180));
         chart.getTitle().setFont(new Font("맑은 고딕", Font.BOLD, 20));
-        chart.getTitle().setFont(new Font("나눔고딕", Font.BOLD, 20));
 
         plot.getDomainAxis().setLabelFont(new Font("맑은 고딕", Font.PLAIN, 14));
         plot.getRangeAxis().setLabelFont(new Font("맑은 고딕", Font.PLAIN, 14));
