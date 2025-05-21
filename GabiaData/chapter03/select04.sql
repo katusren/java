@@ -1,0 +1,52 @@
+-- book테이블에서 가장 비싼 가격을 보이시오
+SELECT MAX(PRICE) FROM BOOK;
+
+SELECT * FROM BOOK;
+SELECT * FROM orders;
+SELECT * FROM CUSTOMER;
+
+SELECT BOOKNAME FROM BOOK WHERE PRICE =(SELECT MAX(PRICE) FROM BOOK);
+
+-- 구매를 구매한 적이 있는 고객의 아이디
+SELECT CUSTID FROM orders;
+
+-- 구매를 구매한 적이 있는 고객의 아이디 와 이름
+SELECT ORDERS.CUSTID, NAME
+FROM CUSTOMER, ORDERS
+WHERE CUSTOMER.CUSTID = ORDERS.CUSTID;
+
+SELECT NAME FROM CUSTOMER WHERE CUSTID IN(SELECT CUSTID FROM ORDERS);
+
+-- IN과 =의 차이: 값이 하나일때는 =, 여러개의 값을 반환할때는 IN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
