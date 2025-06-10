@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_box</title>
+    <style>
+        div {
+            background-color: yellow;
+            width: 300px;
+            padding: 25px;
+            border: 15px solid navy;
+            /*위 오른쪽 아래 왼쪽 여백*/
+            margin: 25px;
+            /*위 오른쪽 아래 왼쪽 여백*/
+        }
+
+        p {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            font-size: 16pt;
+        }
+
+        p.c1 {
+            width: 700px;
+            height: 80px;
+            color: green;
+        }
+
+        p.c1_01 {
+            width: 50%;
+            color: gray;
+        }
+
+        p.c2 {
+            width: 50%;
+            color: aqua;
+        }
+
+        p.c3 {
+            width: 10cm;
+            height: 5cm;
+            color: indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <p>CSS3 박스 모델은 content, padding, border, margin으로 구성되어 있다.</p>
+    <div>박스 모델의 padding, border, margin 속성의 기본 값은 0이며,
+        상하좌우 네 가지 방향을 top, bottom, left, right를 이용하여 지정할 수 있습니다.</div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr />
+    <p>박스 모델의 내용 영역 크기 지정</p>
+    <p class="c1">(1) 박스 모델의 크기를 픽셀(px) 단위로 지정
+    <p class="c1_01">
+        (1-1) 박스 모델의 크기를 퍼센트(%) 단위로 지정
+    </p>
+    </p>
+    <p class="c2">(2) 박스 모델의 크기를 퍼센트(%) 단위로 지정</p>
+    <p class="c3">(3) 박스 모델의 크기를 센티미터(cm) 단위로 지정</p>
+</body>
+
+</html>
+<!-- padding, margin
+- padding : 박스의 안쪽 여백 설정
+- Margin : 박스의 바깥쪽 여백 설정 -->

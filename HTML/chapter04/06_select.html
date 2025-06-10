@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+
+<body>
+    <h3>관심 있는 학습 주제 한 가지를 선택하세요</h3>
+    <form>
+        <select name="subject">
+            <option value="1">HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">JavaScript</option>
+            <option value="4">Joption</option>
+        </select>
+        <p></p>
+        <hr>
+        </hr>
+        <select name="subject" size="4" multiple>
+            <option value="1">HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">JavaScript</option>
+            <option value="4">Joption</option>
+        </select>
+        <p></p>
+        <hr>
+        <label>전공 분야를 선택하세요
+            <p></p>
+            <select name="major">
+                <optgroup label="computer">
+                    <option>Software</option>
+                    <option>Robt</option>
+                    <option>System</option>
+                </optgroup>
+                <optgroup label="language">
+                    <option>Korea</option>
+                    <option>English</option>
+                    <option>Japan</option>
+                </optgroup>
+                <optgroup label="business">
+                    <option>Service</option>
+                    <option>Education</option>
+                    <option>Marketing</option>
+                </optgroup>
+            </select>
+
+        </label>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+</body>
+
+</html>
