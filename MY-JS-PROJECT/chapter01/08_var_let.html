@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var_Let</title>
+</head>
+
+<body>
+    <script>
+        function testVar() {
+            if (true) {
+                var a = 10;
+            }
+
+            console.log(a);
+        }
+
+        function testLet() {
+            if (true) {
+                let b = 10;
+            }
+
+            console.log(b);
+        }
+
+        testVar();
+        //testLet();
+
+        console.log(x);
+        var x = 5;
+
+        //ERROR
+        // console.log(y);
+        // let y=5;
+
+        var z = 1;
+        var z = 2; // 재선언이 가능
+        console.log(z);
+
+        let v = 1;
+        //let v=2; 재선언 불가
+    </script>
+</body>
+
+</html>

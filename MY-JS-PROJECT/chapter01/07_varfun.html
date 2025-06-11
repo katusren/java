@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarFun</title>
+</head>
+
+<body>
+    <script>
+        function getGrade() {
+            var kor = 95; // 지역 변수
+            document.write("국어 점수: " + kor + "<br/>");
+        }
+
+        var kor = 100; // 전역 변수
+        getGrade();
+        document.write("===========================<br/>");
+        document.write("국어 점수: " + kor + "<br/>");
+        document.write("===========================<br/>");
+
+        function getGrade1() {
+            var kor1 = 95; // 지역 변수
+        }
+
+        getGrade1();
+        document.write("지역 변수 값은 함수 외부에서 사용할 수 없다.<br/>");
+        // ERROR
+        //document.write("국어 점수: " + kor1 + "<br/>");
+
+        document.write("===========================<br/>");
+
+        function getGrade2() {
+            var kor2 = 95; // 지역 변수
+            return kor2;
+        }
+
+        getkor = getGrade2();
+        document.write("국어 점수: " + getkor + "<br/>");
+
+    </script>
+</body>
+
+</html>

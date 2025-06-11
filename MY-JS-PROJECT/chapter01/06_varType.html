@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarType</title>
+</head>
+
+<body>
+    <script>
+        var num;
+        var obj = null;
+        document.write(typeof 100 + "<br>");
+        document.write(typeof 10.5 + "<br>");
+        document.write(typeof "나세종" + "<br>");
+        document.write(typeof true + "<br>");
+        document.write(typeof [1, 2, 3] + "<br>");
+        document.write(typeof { name: "홍길동", 나이: 25 } + "<br>");
+        document.write(typeof obj + "<br>");
+        document.write(typeof obj + "<br>");
+
+        var num1 = 10;
+        document.write("num1 변수: " + typeof num1 + "타입 <p/>");
+        document.write("---- 데이터 형 변환 ----<p/>");
+        var num1 = "나세종"
+        document.write("num1 변수: " + typeof num1 + "타입 <p/>");
+
+        stdName = "민정남"; //var 키워드 생략
+        comGrade = 96;
+
+        var stdName;
+        var comGrade;
+
+        document.write("학생 이름: " + stdName + "<br/>");
+        document.write("학생 점수 " + comGrade);
+        // 변수방 재선언시 데이터 값 변동 없음
+    </script>
+</body>
+
+</html>

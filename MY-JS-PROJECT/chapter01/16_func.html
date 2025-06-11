@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <input type="button" value="confirm" onclick="func_confirm()" />
+    <hr>
+    <input type="button" value="prompt" onclick="func_prompt()" />
+
+    <script>
+        function func_confirm() {
+            if (confirm('ok?')) {
+                alert('ok');
+            } else {
+                alert('cancel');
+            }
+        }
+    </script>
+
+    <script>
+        function func_prompt() {
+            if (prompt('id?') === 'soldesk') {
+                alert('welcom');
+            } else {
+                alert('fail');
+            }
+        }
+    </script>
+
+    <hr>
+    <script>
+        let gender = 'M';
+        let age = 21;
+
+        if (gender == 'M') {
+            if (age >= 19) {
+                result = "남자 성인입니다."
+            } else {
+                result = "남자 미성년자입니다."
+            }
+        } else {
+            if (age >= 19) {
+                result = "여자 성인입니다."
+            } else {
+                result = "여자 미성년자입니다."
+            }
+        }
+
+        document.write("당신은 " + result);
+    </script>
+</body>
+
+</html>
