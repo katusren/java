@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        function printMsg(name, age) { // 기명함수
+            document.writeln("이름은 " + name + " 나이는 " + age + "입니다.");
+            //alert("이름은 " + name + " 나이는 " + age + "입니다.");
+        }
+
+        let printMsg = function (name, age) { // 무명함수
+            document.writeln("이름은 " + name + " 나이는 " + age + "입니다.");
+            //alert("이름은 " + name + " 나이는 " + age + "입니다.");
+        }
+    </script>
+    <button type="button" onclick="printMsg('솔데스크',25)">학생정보</button>
+</body>
+
+</html>

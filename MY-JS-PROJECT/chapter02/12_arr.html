@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        var kdata = ['서울', '부산', '구포', '대구', '대전'];
+
+        var str1 = kdata.splice(1, 2)
+        document.write("삭제 데이터: " + str1 + "<p/>");
+        document.write("남은 데이터: " + kdata + "<p/>");
+        document.write("====================================<p/>")
+
+        var str2 = kdata.splice(1, 1, '강릉', '세종')
+        document.write("삭제 데이터: " + str2 + "<p/>");
+        document.write("남은 데이터: " + kdata + "<p/>");
+        document.write("====================================<p/>")
+
+        var str3 = kdata.splice(2, Number.MAX_VALUE)
+        document.write("삭제 데이터: " + str3 + "<p/>");
+        document.write("남은 데이터: " + kdata + "<p/>");
+        document.write("====================================<p/>")
+
+        var p1 = kdata.push("청주", "세종")
+        document.write("추가 데이터: " + p1 + "<p/>");
+        document.write("데이터: " + kdata + "<p/>");
+        document.write("====================================<p/>")
+
+        var p2 = kdata.pop()
+        document.write("데이터: " + p2 + "<p/>");
+        document.write("배열 데이터: " + kdata + "<p/>");
+        document.write("====================================<p/>")
+
+        var p1 = kdata.unshift('청주', '세종'); //추가
+        document.write("데이터 : " + p1 + "<br>"); //4
+        document.write("배열 데이터 : " + kdata + "<p/>");
+        document.write("====================================<p/>")
+
+        var p2 = kdata.shift(); //삭제
+        document.write("데이터 : " + p2 + "<br>");
+        document.write("배열 데이터 : " + kdata + "<p/>");
+
+    </script>
+</body>
+
+</html>

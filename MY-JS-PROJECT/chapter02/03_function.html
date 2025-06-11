@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        var result;
+        function add(name, n) {
+            document.writeln(name + " 학생이 1부터 " + n + "까지 덧셈 수행");
+            var sum = 0;
+            for (var i = 1; i <= n; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        result = add('홍길동', 5149);
+        document.writeln("결과: " + result + "<p/>");
+        result = add('이미지', 149);
+        document.writeln("결과: " + result + "<p/>");
+
+        // 변수를 사용하지 않고 반환값 출력
+        document.writeln("결과: " + add('홍길동', 10) + "<p/>");
+        document.writeln("결과: " + add('이영희', 1000) + "<p/>");
+    </script>
+</body>
+
+</html>
