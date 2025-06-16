@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일별 박스오피스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>일별 박스오피스</h1>
+        </header>
+
+        <section class="date-selector">
+            <input type="date" id="boxOfficeDate" value="2025-06-12">
+            <button id="searchButton">확인</button>
+            <button id="resetButton">초기화</button>
+        </section>
+
+        <section class="rankings-section">
+            <ul id="movieRankings">
+                <li class="loading">날짜를 선택하고 '확인' 버튼을 눌러주세요.</li>
+            </ul>
+        </section>
+
+        <section class="movie-detail-section">
+            <div id="movieDetail">
+                <p>영화를 클릭하면 상세 정보가 표시됩니다.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

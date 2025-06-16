@@ -1,0 +1,255 @@
+:root {
+    /* 연보라 계열의 색상 팔레트 */
+
+    --primary-purple: #7B68EE;
+    /* MediumSlateBlue (메인 보라색) */
+    --dark-purple: #6A5ACD;
+    /* SlateBlue (강조 색상, 버튼 호버 시 사용되는 진한 보라색) */
+    --accent-purple: #8A2BE2;
+    /* BlueViolet (버튼의 기본 색상으로 사용되는 보라색) */
+    --text-dark: #252525d8;
+    /* 어두운 텍스트 색상 */
+    --border-light: #DCDCDC;
+    /* 밝은 테두리 색상 */
+    --box-shadow-light: rgba(0, 0, 0, 0.08);
+    /* 연한 박스 그림자 색상 */
+    --box-shadow-medium: rgba(0, 0, 0, 0.15);
+    /* 중간 진함의 박스 그림자 색상 */
+    --box-background: #FDFDFD;
+    /* 박스 기본 백그라운드 색상 */
+}
+
+body {
+    font-family: sans-serif;
+    /* 페이지 전체의 기본 폰트를 sans-serif로 설정 */
+    background: var(--box-background);
+    display: flex;
+    /* Flexbox 레이아웃을 사용하여 자식 요소 정렬 */
+    justify-content: center;
+    /* 가로 방향으로 중앙 정렬 */
+    align-items: center;
+    /* 세로 방향으로 중앙 정렬 */
+    margin: 0;
+    /* 기본 바디 마진 제거 */
+    padding: 20px;
+    /* 바디 내부에 전체적인 여백 추가 */
+    box-sizing: border-box;
+    /* 패딩과 보더를 포함하여 요소의 전체 너비와 높이를 계산하도록 설정 */
+}
+
+.container {
+    background-color: var(--box-background);
+    /* 컨테이너 배경색을 흰색계열으로 설정 */
+    border-radius: 20px;
+    /* 컨테이너의 모서리를 더 둥글게 (부드러운 느낌) */
+    box-shadow: 0 10px 30px var(--box-shadow-medium);
+    /* 컨테이너 아래에 부드러운 그림자 효과 추가 */
+    width: 95%;
+    /* 화면 너비의 95%를 차지하도록 설정 */
+    max-width: 850px;
+    /* 컨테이너의 최대 너비를 850px로 제한하여 너무 커지지 않도록 조정*/
+    padding: 35px;
+    /* 컨테이너 내부 콘텐츠의 패딩(안쪽 여백) 설정 */
+    box-sizing: border-box;
+    /* 패딩과 보더를 포함하여 요소의 전체 너비와 높이를 계산하도록 설정 */
+    overflow: hidden;
+    /* 컨테이너 내부의 내용이 컨테이너 밖으로 넘칠 경우 숨김 처리 */
+}
+
+header {
+    height: 180px;
+    background: linear-gradient(135deg, #f1b3f8, var(--primary-purple));
+    /* 135도 방향으로 연보라색(#f1b3f8)에서 메인보라색(#7B68EE)으로 변하는 선형 그라데이션 배경을 설정합니다. */
+    background-size: 200% 100%;
+    /* 배경 크기를 원래 크기의 가로 200%, 세로 100%로 확대하여 애니메이션 시 더 넓은 영역에서 움직이도록 합니다. */
+    animation: gradientAnimation 3s infinite alternate;
+    /* 'gradientAnimation'이라는 이름의 애니메이션을 3초 동안 무한히 반복하고, 애니메이션이 끝날 때마다 역방향으로 재생되도록 설정합니다. */
+    color: #FDFDFD;
+    /* 헤더 텍스트 색상을 흰색으로 설정 */
+    padding: 15px 0;
+    /* 헤더의 상하 패딩 증가, 좌우 패딩은 없음 */
+    text-align: center;
+    /* 헤더 텍스트를 중앙 정렬 */
+    border-radius: 15px;
+    /* 헤더 모서리를 둥글게 (더 둥근 느낌) */
+    margin-bottom: 30px;
+    /* 헤더 아래에 마진(바깥 여백) 추가 */
+    font-size: 1.8em;
+    /* 헤더 폰트 크기를 부모 폰트 크기의 2배로 설정 */
+    font-weight: 700;
+    /* 헤더 폰트를 더 굵게 (볼드) */
+    letter-spacing: 1px;
+    /* 헤더 텍스트의 자간(글자 간 간격)을 약간 넓힘 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* 헤더 아래에 그림자 효과 추가 */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        /* 애니메이션 시작 (0%) 시점 */
+        background-position: 0 0;
+        /* 배경의 시작 위치를 좌측 상단(0,0)으로 설정합니다. */
+    }
+
+    100% {
+        /* 애니메이션 종료 (100%) 시점 */
+        background-position: 100% 100%;
+        /* 배경의 종료 위치를 우측 하단(100%, 100%)으로 설정하여, 배경이 대각선으로 움직이는 효과를 만듭니다. */
+    }
+}
+
+.date-selector {
+    display: flex;
+    /* Flexbox 레이아웃을 사용하여 날짜 선택 요소 정렬 */
+    justify-content: center;
+    /* 가로 방향으로 중앙 정렬 */
+    align-items: center;
+    /* 세로 방향으로 중앙 정렬 */
+    margin-bottom: 30px;
+    /* 날짜 선택 섹션 아래에 마진 추가 */
+    padding: 20px;
+    /* 날짜 선택 섹션의 내부 패딩 설정 */
+    background-color: #f5f1ff;
+    /* 연한 보라색 배경 적용 */
+    border-radius: 15px;
+    /* 모서리를 둥글게 */
+    box-shadow: inset 0 2px 5px var(--box-shadow-light);
+    /* 섹션 내부에 약한 그림자 효과 추가 (inset: 안쪽으로) */
+    gap: 15px;
+    /* Flexbox 아이템(날짜 입력, 버튼) 간의 간격을 15px로 설정 */
+}
+
+.date-selector input[type="date"] {
+    flex-grow: 1;
+    /* 가용한 공간을 최대한 차지하도록 유연하게 너비 확장 */
+    max-width: 200px;
+    /* 최대 너비를 200px로 제한 */
+    padding: 12px 18px;
+    /* 입력 필드의 내부 패딩 증가 */
+    border: 1px solid var(--border-light);
+    /* 얇고 밝은 테두리 설정 */
+    border-radius: 10px;
+    /* 입력 필드 모서리를 둥글게 */
+    font-size: 1.1em;
+    /* 폰트 크기 설정 */
+    outline: none;
+    /* 포커스 시 나타나는 기본 아웃라인 제거 */
+    background-color: var(--box-background);
+    /* 입력 필드 배경색을 흰색계열로 설정 */
+}
+
+.date-selector input[type="date"]:focus {
+    border-color: var(--primary-purple);
+    /* 포커스 시 테두리 색상을 메인 보라색으로 변경 */
+    box-shadow: 0 0 8px rgba(var(--primary-purple), 0.3);
+    /* 포커스 시 그림자 효과 추가 */
+}
+
+.date-selector button {
+    padding: 12px 25px;
+    /* 패딩 증가 */
+    background: linear-gradient(45deg, var(--accent-purple), var(--dark-purple));
+    /* 강조 보라색에서 진한 보라색으로 그라데이션 */
+    color: white;
+    /* 텍스트 색상 흰색 */
+    border: none;
+    /* 테두리 제거 */
+    border-radius: 10px;
+    /* 둥근 모서리 */
+    cursor: pointer;
+    /* 마우스 오버 시 커서 변경 */
+    font-size: 1.1em;
+    /* 폰트 크기 */
+    font-weight: 600;
+    /* 폰트 굵기 */
+    box-shadow: 0 6px 15px rgba(var(--accent-purple), 0.4);
+    /* 그림자를 더 크고 진하게 */
+}
+
+.date-selector button:hover {
+    /* 호버 시 그라데이션 방향 변경 및 그림자 더욱 강조 */
+    background: linear-gradient(135deg, var(--dark-purple), var(--accent-purple));
+    /* 호버 시 그라데이션 색상/방향 반전 */
+    transform: translateY(-2px);
+    /* 버튼이 더 많이 위로 올라오도록 */
+    box-shadow: 0 10px 25px rgba(var(--dark-purple), 0.6);
+    /* 호버 시 그림자를 더 크고 매우 진하게 */
+}
+
+.date-selector button:hover::before {
+    opacity: 1;
+    /* 호버 시 하이라이트 효과 나타남 */
+}
+
+.date-selector button:active {
+    transform: translateY(0px);
+    /* 클릭 시 원위치로 살짝 내려가도록 (클릭감) */
+}
+
+.rankings-section,
+.movie-detail-section {
+    padding: 25px;
+    /* 섹션의 내부 패딩 설정 */
+    border: 1px solid var(--border-light);
+    /* 얇고 밝은 테두리 설정 */
+    border-radius: 15px;
+    /* 섹션 모서리를 둥글게 */
+    background-color: var(--box-background);
+    /* 섹션 배경색을 흰색계열로 설정 */
+    margin-bottom: 25px;
+    /* 섹션 아래에 마진 추가 */
+    box-shadow: 0 5px 15px var(--box-shadow-light);
+    /* 섹션 아래에 그림자 효과 추가 */
+}
+
+#movieRankings {
+    list-style: none;
+    /* 목록의 기본 점(bullet) 제거 */
+    padding: 0;
+    /* 목록의 기본 패딩 제거 */
+    margin: 0;
+    /* 목록의 기본 마진 제거 */
+}
+
+#movieRankings li {
+    padding: 15px 0;
+    /* 각 목록 항목의 상하 패딩 증가 */
+    margin-right: 5.8%;
+    border-bottom: 1px solid #c5a1ff;
+    /* 각 항목 아래에 얇고 부드러운 경계선 추가 */
+    font-size: 1.1em;
+    /* 항목 텍스트 폰트 크기 설정 */
+    color: var(--text-dark);
+    /* 항목 텍스트 색상 설정 */
+    display: flex;
+    /* Flexbox 레이아웃을 사용하여 내부 요소 정렬 */
+    align-items: center;
+    /* 세로 방향으로 중앙 정렬 */
+    justify-content: space-between;
+    /* 가로 방향으로 양 끝에 배치하고 그 사이 공간을 균등하게 분배 */
+    transition: background-color 0.2s ease;
+    /* 배경색 변화에 0.2초간 부드러운 전환 효과 적용 (호버 효과용) */
+}
+
+#movieRankings li:last-child {
+    border-bottom: none;
+    /* 마지막 목록 항목의 하단 경계선 제거 */
+}
+
+#movieRankings li:hover {
+    background-color: #F8F8FF;
+    /* 마우스 오버 시 아주 연한 보라색 배경으로 변경 */
+}
+
+.movie-detail-section {
+    min-height: 150px;
+    /* 영화 상세 정보 섹션의 최소 높이 설정 (내용이 적어도 레이아웃 유지) */
+    display: flex;
+    /* Flexbox 레이아웃을 사용하여 내부 요소 정렬 */
+    flex-direction: column;
+    /* 주축을 세로 방향으로 설정 (요소들을 세로로 쌓음) */
+    justify-content: center;
+    /* 주축(세로) 방향으로 중앙 정렬 */
+    align-items: flex-start;
+    /* 교차축(가로) 방향으로 시작점(왼쪽)에 정렬 (텍스트는 왼쪽 정렬) */
+}
