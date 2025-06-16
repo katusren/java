@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button.hide").click(function () {
+                $("p").hide();
+            });
+
+            $("button.show").click(function () {
+                $("p").show();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <P>메세지 : 제이쿼리 입문</P>
+    <button class="hide">메세지 삭제</button>
+    <button class="show">메시지 출력</button>
+</body>
+
+</html>
+
+<!-- $(document).ready: script가 본문에 로드된 후 실행 -->
+<!-- $(window).on("load"): script가 본문과 이미지, 비디오, 소리까지 완전히 로드된 후 실행 -->

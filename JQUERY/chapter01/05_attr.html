@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                $("li:has(span)").text("오늘의 점심메뉴로 선택되었습니다(오징어 불고기)");
+            });
+
+            $("p").on("click", function () {
+                $(":checked").next().text("현재 학습중인 교과목입니다.");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>선택한 요소의 필터링</h1>
+    <ul>
+        <li>라면</li>
+        <li><span>오징어 불고기</span></li>
+        <li>삼겹살</li>
+    </ul>
+    <button>필터링</button>
+
+    <h1>Form 요소의 선택</h1>
+    <form>
+        <input type="checkbox" name="lecture" value="html" /><span>Html</span><br />
+        <input type="checkbox" name="lecture" value="css" /><span>Css</span><br />
+        <input type="checkbox" name="lecture" value="javascript" /><span>Javascript</span><br />
+        <input type="checkbox" name="lecture" value="jquery" checked /><span>Jquery</span>
+        <p></p>
+    </form>
+
+    <p>현재 학습 교과목</p>
+</body>
+
+</html>

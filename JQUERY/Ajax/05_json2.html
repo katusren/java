@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("stinfo.json", function (data) {
+                let items = [];
+                $.each(data, function (key, val) {
+                    items.push(`<li id='${key}'>${val}</li>`)
+                });
+
+                $("<ul/>", {
+                    class: "my-new-list",
+                    html: items.join(""),
+                }).appendTo("body");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>JSON 파일 읽어오기</h2>
+</body>
+
+</html>
