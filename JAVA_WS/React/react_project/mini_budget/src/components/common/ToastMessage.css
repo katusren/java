@@ -1,0 +1,40 @@
+/* src/components/common/ToastMessage.css */
+
+.toast-message {
+  position: fixed; /* 화면에 고정 */
+  bottom: 80px; /* 하단에서 80px 위로 */
+  left: 50%; /* 왼쪽에서 50% 위치 */
+  transform: translateX(
+    -50%
+  ); /* 자신의 너비의 절반만큼 왼쪽으로 이동하여 가운데 정렬 */
+  padding: 12px 24px; /* 상하 12px, 좌우 24px 패딩 */
+  border-radius: 8px; /* 둥근 모서리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* 그림자 */
+  color: #ffffff; /* 흰색 텍스트 */
+  z-index: 50; /* 다른 요소 위에 표시 */
+  opacity: 0; /* 초기에는 투명하게 설정 */
+  visibility: hidden; /* 초기에는 보이지 않게 설정 */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+    transform 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  display: flex; /* 텍스트 가운데 정렬을 위해 flexbox 사용 */
+  align-items: center; /* 세로 가운데 정렬 */
+  justify-content: center; /* 가로 가운데 정렬 */
+  min-width: 200px; /* 최소 너비 설정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+/* 메시지가 있을 때 (opacity가 1이 되면) */
+.toast-message {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 성공 메시지 타입 */
+.toast-message.success {
+  background-color: #28a745; /* 녹색 배경 */
+}
+
+/* 에러 메시지 타입 */
+.toast-message.error {
+  background-color: #dc3545; /* 빨간색 배경 */
+}

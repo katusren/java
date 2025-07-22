@@ -1,0 +1,135 @@
+/* src/pages/StatisticsView.css */
+
+/* 페이지 전체 컨테이너 */
+.statistics-container {
+  padding: 1.5rem;
+  max-width: 600px; /* Layout.css의 app-main-content와 일관성 유지 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 섹션 간 간격 */
+  flex-grow: 1;
+}
+
+/* 월 이동 네비게이션 */
+.month-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.month-display {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #1d4ed8;
+  transform: scale(1.1);
+}
+
+/* 요약 카드 및 차트 카드 공통 스타일 */
+.summary-card,
+.chart-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+/* 요약 카드 내부 예산 정보 */
+.budget-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.budget-item:last-child {
+  border-bottom: none;
+}
+
+.budget-label {
+  font-size: 1rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.budget-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745; /* 녹색 (총 예산) */
+}
+
+.spent-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #dc3545; /* 빨간색 (총 지출) */
+}
+
+.remaining-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff; /* 파란색 (남은 예산) */
+}
+
+.remaining-value.negative {
+  color: #dc3545; /* 남은 예산이 마이너스일 때 빨간색 */
+}
+
+/* 차트 제목 */
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* 차트 데이터 없을 때 메시지 */
+.no-chart-data {
+  text-align: center;
+  color: #6c757d;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+/* rechart 툴팁 기본 스타일 오버라이드 (선택 사항) */
+.recharts-tooltip-wrapper {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #ccc !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.recharts-tooltip-label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+.recharts-tooltip-item {
+  color: #555;
+}

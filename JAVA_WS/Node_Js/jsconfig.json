@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": true,
+    "lib": ["es2015", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

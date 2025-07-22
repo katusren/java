@@ -1,0 +1,181 @@
+/* src/pages/Home.css */
+
+/* 페이지 전체 컨테이너 스타일 */
+.home-container {
+  padding: 1.5rem; /* 모든 방향 패딩 */
+  max-width: 600px; /* 최대 너비 (960px) - Layout.css의 app-main-content와 일관성 유지 */
+  margin-left: auto; /* 좌우 자동 마진으로 가운데 정렬 */
+  margin-right: auto;
+  display: flex; /* flexbox 사용 */
+  flex-direction: column; /* 자식 요소들을 세로로 정렬 */
+  gap: 1.5rem; /* 카드 간의 간격 */
+  flex-grow: 1; /* 부모(app-main-content)의 남은 공간을 채우도록 설정 */
+}
+
+/* 월별 요약 카드 스타일 */
+.month-summary-card,
+.recent-expenses-card {
+  background-color: #ffffff; /* 흰색 배경 */
+  border-radius: 0.75rem; /* 둥근 모서리 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05); /* 부드러운 그림자 */
+  padding: 1.5rem; /* 내부 패딩 */
+}
+
+.month-summary-title,
+.recent-expenses-title {
+  font-size: 1.5rem; /* 제목 폰트 크기 */
+  font-weight: bold; /* 굵게 */
+  color: #1f2937; /* 진한 회색 텍스트 */
+  margin-bottom: 1.25rem; /* 하단 마진 */
+  text-align: center; /* 가운데 정렬 */
+}
+
+/* 예산 정보 섹션 */
+.budget-info {
+  display: flex; /* flexbox 사용 */
+  flex-direction: column; /* 세로 정렬 */
+  gap: 0.75rem; /* 항목 간 간격 */
+}
+
+.budget-item {
+  display: flex; /* flexbox 사용 */
+  justify-content: space-between; /* 양쪽 끝 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  padding: 0.6rem 0; /* 상하 패딩 */
+  border-bottom: 1px dashed #e5e7eb; /* 점선 구분선 */
+}
+
+.budget-item:last-child {
+  border-bottom: none; /* 마지막 항목은 구분선 없음 */
+}
+
+.budget-label {
+  font-size: 1rem; /* 레이블 폰트 크기 */
+  color: #4b5563; /* 회색 텍스트 */
+  font-weight: 500; /* 중간 굵기 */
+}
+
+.budget-value {
+  font-size: 1.1rem; /* 값 폰트 크기 */
+  font-weight: bold; /* 굵게 */
+  color: #28a745; /* 녹색 (총 예산) */
+}
+
+.spent-value {
+  font-size: 1.1rem; /* 값 폰트 크기 */
+  font-weight: bold; /* 굵게 */
+  color: #dc3545; /* 빨간색 (총 지출) */
+}
+
+.remaining-value {
+  font-size: 1.2rem; /* 값 폰트 크기 */
+  font-weight: bold; /* 굵게 */
+  color: #007bff; /* 파란색 (남은 예산) */
+}
+
+.remaining-value.negative {
+  color: #dc3545; /* 남은 예산이 마이너스일 때 빨간색 */
+}
+
+/* 최근 지출 섹션 */
+.recent-expenses-card {
+  flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+}
+
+/* 지출 목록 */
+.expense-list {
+  list-style: none; /* 기본 목록 스타일 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.expense-item {
+  display: flex; /* flexbox 사용 */
+  justify-content: space-between; /* 양쪽 끝 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  padding: 0.8rem 0; /* 상하 패딩 */
+  border-bottom: 1px solid #e5e7eb; /* 단색 구분선 */
+}
+
+.expense-item:last-child {
+  border-bottom: none; /* 마지막 항목은 구분선 없음 */
+}
+
+.expense-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 남은 공간 차지 */
+}
+
+.expense-category {
+  font-size: 0.9rem; /* 카테고리 폰트 크기 */
+  color: #6c757d; /* 회색 */
+  font-weight: 500;
+}
+
+.expense-description {
+  font-size: 1.05rem; /* 내용 폰트 크기 */
+  color: #343a40; /* 진한 회색 */
+  font-weight: 600; /* 조금 더 굵게 */
+}
+
+.expense-amount-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 오른쪽 정렬 */
+  margin-left: 1rem; /* 왼쪽 마진 */
+}
+
+.expense-amount {
+  font-size: 1.1rem; /* 금액 폰트 크기 */
+  font-weight: bold; /* 굵게 */
+  color: #dc3545; /* 빨간색 */
+}
+
+.expense-date {
+  font-size: 0.85rem; /* 날짜 폰트 크기 */
+  color: #6c757d; /* 회색 */
+  margin-top: 0.2rem; /* 상단 마진 */
+}
+
+/* 삭제 버튼 스타일 */
+.delete-expense-button {
+  background: none; /* 배경 없음 */
+  border: none; /* 테두리 없음 */
+  color: #dc3545; /* 빨간색 아이콘 */
+  font-size: 1.2rem; /* 아이콘 크기 */
+  cursor: pointer; /* 포인터 커서 */
+  margin-left: 1rem; /* 왼쪽 마진 */
+  padding: 0.3rem; /* 클릭 영역 확보 */
+  transition: transform 0.2s ease, opacity 0.2s ease; /* 전환 효과 */
+}
+
+.delete-expense-button:hover {
+  transform: scale(1.1); /* 호버 시 약간 확대 */
+  opacity: 0.8; /* 호버 시 투명도 조절 */
+}
+
+/* 지출이 없을 때 메시지 */
+.no-expenses-message {
+  text-align: center; /* 가운데 정렬 */
+  padding: 2rem; /* 패딩 */
+  color: #6c757d; /* 회색 텍스트 */
+  font-size: 1.1rem;
+}
+
+.add-expense-link {
+  display: inline-block; /* 링크를 블록 요소처럼 다루어 패딩/마진 적용 */
+  margin-top: 1rem; /* 상단 마진 */
+  padding: 0.6rem 1.2rem; /* 패딩 */
+  background-color: #007bff; /* 파란색 배경 */
+  color: #ffffff; /* 흰색 텍스트 */
+  border-radius: 0.5rem; /* 둥근 모서리 */
+  text-decoration: none; /* 밑줄 제거 */
+  font-weight: bold; /* 굵게 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 전환 효과 */
+}
+
+.add-expense-link:hover {
+  background-color: #0056b3; /* 호버 시 더 진한 파란색 */
+  transform: translateY(-1px); /* 약간 위로 올라오는 효과 */
+}
