@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE #jdbc:h2:tcp://localhost/~/jpashop
+    username: sa #sa
+    password: 12345
+    driver-class-name: oracle.jdbc.OracleDriver # org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+        show_sql: true
+    show-sql: true
+
+  security:
+    jwt:
+      secret: your-super-secret-key-that-is-at-least-64-bytes-long-for-hs512-to-work-correctly
+      expiration: 86400000 # 24 hours
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    com.product.backend: debug
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method

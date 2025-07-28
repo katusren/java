@@ -1,7 +1,7 @@
 /* src/components/layout/Layout.jsx */
 
 import React from "react";
-import Header from "./header/Header"; 
+import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import "./Layout.css";
 
