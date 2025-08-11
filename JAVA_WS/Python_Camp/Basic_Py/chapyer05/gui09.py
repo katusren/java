@@ -58,6 +58,11 @@ window.title("디지털 앨범")
 window.bind("<Prior>",pageUp) # PgUp
 window.bind("<Next>",pageDown) # PgDn
 
+# 키보드 이벤트2
+window.bind("<Left>",pageUp) # <- 키 : 이전 이미지
+window.bind("<Right>",pageDown) # -> 키 : 다음 이미지
+
+
 # 마우스 이벤트
 btnPrev = Button(window, text="<<이전", command=clickPrev)
 btnNext = Button(window, text="다음>>", command=clickNext)

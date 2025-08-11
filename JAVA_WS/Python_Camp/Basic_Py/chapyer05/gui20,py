@@ -1,0 +1,256 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QFileDialog, QLabel
+from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtCore import Qt
+from PIL import Image, ImageEnhance
+import numpy as np
+
+class MiniPhotoShop(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+        self.image_path = None
+        self.image = None  # 원본 이미지
+        self.modified_image = None  # 편집된 이미지
+
+    def initUI(self):
+        """GUI 기본 설정"""
+        self.setWindowTitle("Mini Photoshop (PyQt)")
+        self.setGeometry(300, 100, 800, 600)
+
+        # 메뉴바 설정
+        menubar = self.menuBar()
+        fileMenu = menubar.addMenu("파일")
+        editMenu = menubar.addMenu("이미지 편집")
+
+        # 파일 열기
+        openFile = QAction("파일 열기", self)
+        openFile.triggered.connect(self.openFile)
+        fileMenu.addAction(openFile)
+
+        # 파일 저장
+        saveFile = QAction("파일 저장", self)
+        saveFile.triggered.connect(self.saveFile)
+        fileMenu.addAction(saveFile)
+
+        # 원본으로 되돌리기 추가
+        resetImage = QAction("원본으로 되돌리기", self)
+        resetImage.triggered.connect(self.resetToOriginal)
+        fileMenu.addAction(resetImage)
+
+        # 프로그램 종료
+        exitApp = QAction("종료", self)
+        exitApp.triggered.connect(self.close)
+        fileMenu.addAction(exitApp)
+
+        # 이미지 조작 기능 추가
+        zoomIn = QAction("확대", self)
+        zoomIn.triggered.connect(self.zoomIn)
+        editMenu.addAction(zoomIn)
+
+        zoomOut = QAction("축소", self)
+        zoomOut.triggered.connect(self.zoomOut)
+        editMenu.addAction(zoomOut)
+
+        rotate = QAction("회전", self)
+        rotate.triggered.connect(self.rotateImage)
+        editMenu.addAction(rotate)
+
+        mirrorH = QAction("좌우 반전", self)
+        mirrorH.triggered.connect(self.flipHorizontal)
+        editMenu.addAction(mirrorH)
+
+        mirrorV = QAction("상하 반전", self)
+        mirrorV.triggered.connect(self.flipVertical)
+        editMenu.addAction(mirrorV)
+
+        brightness = QAction("밝게", self)
+        brightness.triggered.connect(lambda: self.adjustBrightness(1.2))
+        editMenu.addAction(brightness)
+
+        darken = QAction("어둡게", self)
+        darken.triggered.connect(lambda: self.adjustBrightness(0.8))
+        editMenu.addAction(darken)
+
+        grayscale = QAction("흑백 이미지", self)
+        grayscale.triggered.connect(self.convertToGrayscale)
+        editMenu.addAction(grayscale)
+
+        # 이미지 표시용 QLabel
+        self.imageLabel = QLabel(self)
+        self.imageLabel.setAlignment(Qt.AlignCenter)
+        self.imageLabel.setStyleSheet("border: 1px solid gray;")  # 경계선 추가
+        self.setCentralWidget(self.imageLabel)
+
+        self.show()
+
+    def openFile(self):
+        """이미지 파일 열기"""
+        filePath, _ = QFileDialog.getOpenFileName(
+            self, 
+            "파일 열기", 
+            "", 
+            "이미지 파일 (*.png *.jpg *.jpeg *.bmp *.gif *.tiff *.webp);; 모든 파일 (*.*)"
+        )
+
+        if filePath:
+            try:
+                self.image_path = filePath
+                
+                # 이미지 열기 및 모드 확인
+                loaded_image = Image.open(filePath)
+                print(f"원본 이미지 모드: {loaded_image.mode}")
+                
+                # 투명도 처리
+                # RGBA: Red, Green, Blue, Alpha
+                # A(Alpha) = 투명도 채널 (0=완전투명, 255=완전불투명)
+                # 총 4채널
+                # 예: PNG 이미지 (투명 배경 가능)
+                # LA:이미 흑백이므로 단순 붙여넣기
+                if loaded_image.mode in ('RGBA', 'LA'):
+                    # 흰색 배경으로 합성
+                    background = Image.new('RGB', loaded_image.size, (255, 255, 255))
+                    if loaded_image.mode == 'RGBA':
+                        background.paste(loaded_image, mask=loaded_image.split()[-1])
+                    else:
+                        background.paste(loaded_image)
+                    self.image = background
+                else:
+                    self.image = loaded_image.convert("RGB")
+                
+                print(f"변환된 이미지 모드: {self.image.mode}")
+                self.modified_image = self.image.copy()
+                self.displayImage()
+                
+            except Exception as e:
+                print(f"이미지 로드 오류: {e}")
+
+    def saveFile(self):
+        """편집된 이미지 저장"""
+        if self.modified_image:
+            savePath, _ = QFileDialog.getSaveFileName(
+                self, 
+                "파일 저장", 
+                "", 
+                "JPEG 파일 (*.jpg);; PNG 파일 (*.png);; 모든 파일 (*.*)"
+            )
+            if savePath:
+                try:
+                    self.modified_image.save(savePath)
+                    print(f"이미지 저장 완료: {savePath}")
+                except Exception as e:
+                    print(f"이미지 저장 오류: {e}")
+
+    def resetToOriginal(self):
+        """원본 이미지로 되돌리기"""
+        if self.image:
+            self.modified_image = self.image.copy()
+            self.displayImage()
+    
+    def displayImage(self):
+        """현재 편집된 이미지를 GUI에 표시"""
+        if self.modified_image is None:
+            return
+            
+        try:
+            # numpy 배열로 변환
+            img_array = np.array(self.modified_image)
+            
+            # RGB 형식 확인
+            if len(img_array.shape) == 3 and img_array.shape[2] == 3:
+                height, width, channels = img_array.shape
+                bytes_per_line = 3 * width
+                
+                # QImage 생성
+                q_image = QImage(
+                    img_array.data,
+                    width,
+                    height,
+                    bytes_per_line,
+                    QImage.Format_RGB888
+                )
+                
+                # QPixmap으로 변환
+                pixmap = QPixmap.fromImage(q_image)
+                
+                # 라벨 크기에 맞춰 스케일링 (비율 유지)
+                label_size = self.imageLabel.size()
+                if pixmap.width() > label_size.width() or pixmap.height() > label_size.height():
+                    pixmap = pixmap.scaled(
+                        label_size, 
+                        Qt.KeepAspectRatio, 
+                        Qt.SmoothTransformation
+                    )
+                
+                self.imageLabel.setPixmap(pixmap)
+                
+            else:
+                print(f"예상치 못한 이미지 형태: {img_array.shape}")
+                
+        except Exception as e:
+            print(f"이미지 표시 오류: {e}")
+            # 에러 대체 방법시도
+            try:
+                img = self.modified_image.convert("RGB")
+                data = img.tobytes("raw", "RGB")
+                qimage = QImage(data, img.width, img.height, QImage.Format_RGB888)
+                pixmap = QPixmap.fromImage(qimage)
+                self.imageLabel.setPixmap(pixmap)
+            except Exception as e2:
+                print(f"대체 표시 방법도 실패: {e2}")
+
+    def zoomIn(self):
+        """이미지 확대"""
+        if self.modified_image:
+            width, height = self.modified_image.size
+            new_width = int(width * 1.2)
+            new_height = int(height * 1.2)
+            self.modified_image = self.modified_image.resize((new_width, new_height), Image.LANCZOS)
+            self.displayImage()
+
+    def zoomOut(self):
+        """이미지 축소"""
+        if self.modified_image:
+            width, height = self.modified_image.size
+            new_width = max(int(width * 0.8), 1)  # 최소 크기 1 보장
+            new_height = max(int(height * 0.8), 1)
+            self.modified_image = self.modified_image.resize((new_width, new_height), Image.LANCZOS)
+            self.displayImage()
+
+    def rotateImage(self):
+        """이미지 회전 (90도 시계방향)"""
+        if self.modified_image:
+            self.modified_image = self.modified_image.rotate(-90, expand=True)  # 시계방향
+            self.displayImage()
+
+    def flipHorizontal(self):
+        """좌우 반전"""
+        if self.modified_image:
+            self.modified_image = self.modified_image.transpose(Image.FLIP_LEFT_RIGHT)
+            self.displayImage()
+
+    def flipVertical(self):
+        """상하 반전"""
+        if self.modified_image:
+            self.modified_image = self.modified_image.transpose(Image.FLIP_TOP_BOTTOM)
+            self.displayImage()
+
+    def adjustBrightness(self, factor):
+        """이미지 밝기 조절"""
+        if self.modified_image:
+            enhancer = ImageEnhance.Brightness(self.modified_image)
+            self.modified_image = enhancer.enhance(factor)
+            self.displayImage()
+
+    def convertToGrayscale(self):
+        """이미지를 흑백으로 변환"""
+        if self.modified_image:
+            # 흑백 변환 후 다시 RGB로 변환 (3채널 유지)
+            gray_image = self.modified_image.convert("L")
+            self.modified_image = gray_image.convert("RGB")
+            self.displayImage()
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MiniPhotoShop()
+    sys.exit(app.exec_())
