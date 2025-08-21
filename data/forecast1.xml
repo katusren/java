@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+	<head>
+	<meta charset="utf-8" />	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	
+	<meta name="robots" content="all">
+	
+	<meta name="keywords" content="기상청-주요업무, 정보공개, 국민참여, 디지털간행물, 기상청뉴스, 기관소개 안내">
+	<meta name="description" content="기상청-주요업무, 정보공개, 국민참여, 디지털간행물, 기상청뉴스, 기관소개 안내">
+	<meta name="author" content="기상청">
+	<meta name="classification" content="기상청">
+	<title>기상청</title>
+	<meta name="decorator" content="kma-popup"/>
+	<link rel="apple-touch-icon-precomposed" href="/kma/resources/images/common/favicon.ico">
+	<link rel="shortcut icon" href="/kma/resources/images/common/favicon.ico">
+	
+	<meta property="og:title" content="기상청">
+	<meta property="og:image" content="https://www.kma.go.kr/kma/iphone-shortcut.png">
+	
+	<link rel="stylesheet" type="text/css" href="/kma/resources/css/common.css?ver=2022121919">
+	<link rel="stylesheet" type="text/css" href="/kma/resources/css/media.css?ver=2022121919">
+	
+	<script src="/kma/resources/js/jquery-1.11.3.min.js"></script>
+	<script src="/kma/resources/js/jquery-ui.js"></script>
+	<script src="/kma/resources/js/common.js?ver=2022121919"></script>
+	<style>
+		.error { max-width:1200px; margin:auto; min-height:400px; background:url(/kma/resources/images/gisang.png) 160px 80px no-repeat; background-size:200px auto;}
+		.error div.main { padding:120px 10px 10px 420px; font-weight:500; color:#013a68;}
+		.error div.main p { padding-left:10px; font-size:20px; }
+		.error div.main p.heading { padding-left:0px; font-size:26px; font-weight:600; }
+		.error div.main p.heading em { font-weight:900; font-size:30px; }
+		.error div.main p.email {padding-left:10px;}
+		.error div.main p.tel { padding-left:25px;}
+		.error div.main p a { color:#013a68; font-size:20px; }
+		.txt {padding: 40px 10px 105px 172px; font-weight:500; color:#013a68; }
+		.txt p{font-size:20px;}
+		.txt p a { color:#013a68; font-size:20px; }
+		@media screen and (max-width:768px){
+			.error { background-position: center 60px; background-size:150px auto;}
+			.error div.main { padding:10px 0px; padding-top:230px}
+			.error div.main p { text-align:center; font-size:15px; }
+			.error div.main p.heading { font-size:18px; }
+			.error div.main p.heading em { font-size:18px; }
+			.error div.main p.email { font-size:15px; }
+			.error div.main p.tel { font-size:15px; }
+			.error div.main p a { color:#013a68; font-size:15px; }
+
+			.txt{ padding:18px 25px 40px 25px;}
+			.txt p { font-size:15px; }
+			.txt p a { color:#013a68; font-size:15px; }
+		}
+	</style>
+</head>
+<body>
+	<div id="body_wrap">
+			
+	<div class="skip_nav">
+		<a href="#container">본문 바로가기</a>
+		<a href="#gnb_first">대메뉴 바로가기</a>
+	</div>	
+	<div class="eg-wrap">
+		<div class="eg-area">
+			<h1>이 누리집은 대한민국 공식전자정부 누리집입니다.</h1>
+			<!--<button type="button" class="eg-arr" title="펼치기">공식 누리집 확인 방법</button>			-->
+			<!--<a href="https://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do" target="_blank">
+				<img src="/kma/resources/images/img_korea_symbol.png" alt="국가상징 알아보기">
+			</a>-->
+			<!--<div class="eg-nuri" style="display:none;">
+				<ul>
+					<li>공식 누리집 주소 확인하기
+						<p>go.kr 주소를 사용하는 누리집은 대한민국 정부기관이 관리하는 누리집입니다. 이 밖에 or.kr 또는 .kr등 다른 도메인 주소를 사용하고 있다면
+						아래 URL에서 도메인 주소를 확인해 보세요.</p>
+						<a href="https://uiux.egovframe.go.kr/search.do" target="_blank" class="eg-pop">운영중인 공식 누리집보기</a>
+					</li>
+					<li>아이콘 또는 HTTPS 확인하기
+						<p>웹 브라우저의 주소 입력창에 표시된 자물쇠 아이콘과 주소 앞 https://가 있는지 체크하여 보안적용이 되어 있는지 확인하세요.</p>
+					</li>
+				</ul>
+			</div>-->
+		</div>
+	</div>
+	<script>
+		$(".eg-arr").on('click',function(){
+			if($(".eg-nuri").hasClass('on')){
+				$(".eg-nuri").removeClass('on');
+				$(".eg-arr").removeClass('on')
+				$(".eg-nuri").hide();
+			}else{
+				$(".eg-nuri").addClass('on');
+				$(".eg-arr").addClass('on');
+				$(".eg-nuri").fadeIn('fast');
+			}
+			});
+	</script>
+	<div id="header">
+		<div class="ham_bg"></div>
+		<div class="global_bot_wrap">
+			<div class="global_bot">
+				<div class="ham_btn_wrap mobile"><a href="javascript:void(0);" class="ham_btn">모바일메뉴버튼</a></div>
+				<h1><a href="/kma/" class="sprite">기상청</a></h1>
+				<!--<a href="https://www.president.go.kr/affairs/gov_project" target="_blank" class="logo_slave">다시 대한민국! 새로운 국민의 나라</a>-->
+				<div class="option">
+					<div class="sel wd">
+						<a href="javascript:void(0);" title="리스트열기">날씨누리</a>
+						<ul class="target">
+							<li><a href="https://www.weather.go.kr/w/">날씨누리</a></li>
+						</ul>
+					</div>
+					<div class="sel lang">
+						<a href="javascript:void(0);" title="리스트열기">KOR</a>
+						<ul class="target">
+							<li><a href="https://www.kma.go.kr/neng/index.do" target="_blank" title="새창열림">ENG</a></li>
+				            <li><a href="https://www.kma.go.kr/nchn/index.do" target="_blank" title="새창열림">CHA</a></li>
+				            <li><a href="https://www.kma.go.kr/njpn/index.do" target="_blank" title="새창열림">JPN</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sch_form_group">
+					<form name="global_sch_form" action="/kma/sch/search.jsp" method="get">
+						<label for="global_sch_q">검색어</label>
+						<input type="text" id="global_sch_q" name="q" placeholder="검색어를 입력하세요." />
+						<input type="submit" id="global_sch_go" name="go" value="검색"/>
+					</form>
+				</div>
+				
+			</div>
+			<!-- 사이트맵 -->
+			
+			<div class="allMenu">
+				<a href="javascript:void(0);" class="allMenuToggle sprite">사이트맵</a>
+				<div class="allMenuCont">	
+					<div class="sitemap_tit">
+						<h1>누리집 안내지도</h1>
+					</div>                      
+                    
+					<ul class="allMenuList">  
+						<li><div class="site_d1">
+								<h2>정보공개</h2>
+                            </div>
+                            <div class="con">
+                                <div class="lh">
+                                    <a href="javascript:void(0);" class="aml_d2">행정정보 공개</a> 
+                                    <div class="wrap">
+                                        <div class="l">
+                                            <a href="/kma/public/adm/system_01.jsp" class="aml_d3">정보공개제도안내</a>   
+                                            <ul class="aml_d4">
+                                                <li><a href="/kma/public/adm/system_01.jsp">제도안내</a></li>
+                                                <li><a href="/kma/public/adm/system_02.jsp">처리절차</a></li>
+                                                <li><a href="/kma/public/adm/system_04.jsp">불복절차</a></li>
+                                                <li><a href="/kma/public/adm/system_05.jsp">담당자현황</a></li>
+                                                <li><a href="/kma/public/adm/system_06.jsp">수수료</a></li>
+                                            </ul>
+											<a href="https://www.open.go.kr" class="aml_d3" target="_blank" title="새창열림">행정정보공개청구</a>
+											<a href="/kma/public/adm/system_07.jsp" class="aml_d3">비공개정보기준</a>   
+                                        </div>
+                                        <div class="r" style="margin-right:0px;">
+                                            <ul class="aml_d3_2">
+                                                <li><a href="/kma/public/adm/info_list.jsp">정보목록</a></li>
+                                                <li><a href="/kma/public/adm/assembly_01.jsp">국회관련정보공개</a></li>
+												<li><a href="/kma/public/adm/rnd_01.jsp">연구용역정보</a>
+													<ul class="aml_d4">
+                                                        <li><a href="/kma/public/adm/rnd_01.jsp">연구용역정보</a></li>
+														<li><a href="/kma/public/adm/policy_research.jsp">정책연구</a></li>
+                                                    </ul>
+												</li>                                                
+                                                <li><a href="/kma/public/adm/budget_01.jsp">예산재정정보</a>
+                                                    <ul class="aml_d4">
+                                                        <li><a href="/kma/public/adm/budget_02.jsp">예산재정정보</a></li>
+                                                        <li><a href="/kma/public/adm/budget_03.jsp">월별수입징수상황</a></li>
+                                                        <li><a href="/kma/public/adm/budget_04.jsp">월별지출집행상황</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>   
+								<div class="lc">
+                                    <a href="javascript:void(0);" class="aml_d2">사전정보공개</a> 
+                                    <div class="wrap">
+										<div class="l">
+                                            <a href="/kma/public/adm/open_01.jsp?s=0" class="aml_d3">사전공개목록</a>   
+                                            <ul class="aml_d4">
+												<li><a href="/kma/public/adm/open_01.jsp?s=0">기상정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=1">기후통계정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=2">태풍황사정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=3">지진화산정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=4">기상관측정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=5">재정계약정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=6">행정감시정보</a></li>
+												<li><a href="/kma/public/adm/open_01.jsp?s=7">공공사무정보</a></li>
+                                            </ul>
+											<a href="/kma/public/adm/open_02.jsp" class="aml_d3">국실별 사전정보공개</a>   
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="r">
+                                    <ul class="aml_d2_2">
+                                        <li><a href="/kma/public/data_01.jsp">공공데이터 개방안내</a></li>
+                                        <li><a href="/kma/public/clean_policy_01.jsp">정책실명제</a></li>
+                                        <li><a href="/kma/public/clean_policy_02.jsp">국민신청실명제</a></li>
+                                        <li><a href="/kma/public/integrity_01.jsp">청렴자료 공개</a>
+                                            <ul class="aml_d3_2">
+                                                <li><a href="/kma/public/integrity_01.jsp">반부패·청렴현황</a></li>
+                                                <li><a href="/kma/public/integrity_02.jsp">감사정보</a></li>
+                                                <li><a href="/kma/public/integrity_03.jsp">입찰·계약 현황</a></li>
+                                                <li><a href="/kma/public/integrity_04.jsp">업무추진비</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+						</li>
+						<li><div class="site_d1">
+								<h2>국민참여</h2>
+							</div>
+							<ul>
+                                <li><a href="/kma/citizen/minwon_01.jsp">민원이용안내</a></li>
+                                <li><a href="/kma/citizen/minwon_02.jsp">기상민원</a></li>
+                                <li><a href="https://www.110.go.kr/ic.do?pi=chatCamIndicate2" target="_blank" title="새창열림">110 화상/채팅 상담</a></li>
+                                <li><a href="/kma/citizen/ombudsman.jsp">청렴옴부즈만</a></li>
+                                <li><a href="/kma/citizen/ebudget.jsp">부패신고센터</a></li>
+                                <li><a href="/kma/citizen/proposal.jsp">국민행복제안</a></li>
+                                <li><a href="/kma/citizen/hearing.jsp">정책토론</a></li>
+                                <li><a href="/kma/citizen/regulation_01.jsp">규제신고</a>
+                                    <ul>
+                                        <li><a href="/kma/citizen/regulation_01.jsp">규제개혁</a></li>
+                                        <li><a href="/kma/citizen/regulation_02.jsp">규제현황</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/kma/citizen/activeadm.jsp">적극행정</a>
+				    <ul>
+                                        <li><a href="/kma/citizen/activeadm.jsp">제도안내</a></li>
+                                        <li><a href="/kma/citizen/activeadm_02.jsp">적극행정 자료실</a></li>
+                                    </ul>
+			        </li>
+                                <li><a href="/kma/citizen/discuss.jsp">자유토론</a></li>
+							</ul>
+						</li>
+						<li><div class="site_d1">
+								<h2>자료실</h2>
+							</div>
+							<ul>
+								<li><a href="/kma/archive/pub.jsp">기상간행물</a></li>
+								<li><a href="/kma/archive/photo_exhibition.jsp">기상 사진전</a></li>
+								<li><a href="/kma/archive/disasterpreventionvideo.jsp">기상 재해 캠페인 영상</a></li>
+								<!-- <li><a href="/kma/archive/recommend_contents.jsp">추천콘텐츠</a></li> -->
+							</ul>
+						</li>
+						<li><div class="site_d1">
+								<h2>알림·소식</h2>
+							</div>
+							<ul>
+								<li><a href="/kma/news/notice.jsp">공지사항</a></li>
+								<li><a href="/kma/news/press.jsp">보도자료</a></li>
+								<li><a href="/kma/news/photo.jsp">포토뉴스</a></li>
+								<li><a href="/kma/news/recruit.jsp">채용</a></li>
+								<li><a href="/kma/news/hr.jsp">인사</a></li>
+							</ul>
+						</li>	
+						<li><div class="site_d1">
+								<h2>주요업무</h2>
+							</div>
+							<ul>
+								<li><a href="/kma/biz/law_01.jsp">법령정보</a></li>
+								<!--<li><a href="/kma/biz/affairs.jsp">국정과제</a></li>-->
+								<li><a href="/kma/biz/plan_01.jsp">중기발전계획</a></li>
+								<li><a href="/kma/biz/plan_02.jsp">주요업무계획</a></li>
+								
+							</ul>
+						</li>	
+						<li><div class="site_d1">
+								<h2>기관소개</h2>
+							</div>
+							<ul>
+                                <li><a href="/kma/org/intro.jsp">기상청소개</a></li>
+                                <li><a href="/kma/org/vision.jsp">임무&middot;이상</a>
+                                    <ul>
+                                        <li><a href="/kma/org/vision.jsp">임무&middot;이상</a></li>
+                                        <li><a href="/kma/org/history.jsp">연혁</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/kma/org/chief/greeting.jsp">청장소개</a>
+                                    <ul>
+                                        <li><a href="/kma/org/chief/greeting.jsp">청장인사말</a></li>
+                                        <li><a href="/kma/org/chief/about.jsp">청장소개</a></li>
+                                        <li><a href="/kma/org/chief/schedule.jsp">일정365</a></li>
+                                        <li><a href="/kma/org/chief/conversation.jsp">청장과의 대화</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/kma/org/deputy.jsp">차장소개</a></li>
+                                <li><a href="/kma/org/generation_01.jsp">역대 기관장</a>
+                                    <ul>
+                                        <li><a href="/kma/org/generation_01.jsp">기상청장/차장</a></li>
+                                        <li><a href="/kma/org/generation_02.jsp">기상대장</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/kma/org/system/chart.jsp">조직/직원안내</a>
+                                    <ul>
+                                        <li><a href="/kma/org/system/chart.jsp">조직도</a></li>
+                                        <li><a href="/kma/org/system/staff.jsp">부서/직원검색</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/kma/org/location.jsp">오시는 길</a></li>
+							</ul>
+						</li>				
+					</ul><!-- //.allMenuList -->	 			
+				</div><!-- //.allMenuCont -->
+				<a href="javascript:void(0);" class="allMenuClose sprite">전체메뉴 닫기</a>
+			</div><!-- //.allMenu 사이트맵-->
+		</div><!-- //.global -->
+		<div class="gnb_wrap">
+			
+			<!-- S : GNB -->
+			<div class="gnb" id="gnavi">
+                <div class="gnb_bg"></div>
+                <ul>
+                    <li class="l_title1 tile">
+                        <a href="/kma/public/adm/system_01.jsp" id="gnb_first"><span>정보공개</span></a>
+                        <ul class="l_list_1">
+                            <li>
+                                <a href="javascript:void(0);"><span>행정정보공개</span></a>
+                                <ul>
+                                    <li><a href="javascript:void(0);">정보공개제도안내</a>
+                                        <ul>
+                                            <li><a href="/kma/public/adm/system_01.jsp">제도안내</a></li>
+                                            <li><a href="/kma/public/adm/system_02.jsp">처리절차</a></li>
+                                            <li><a href="/kma/public/adm/system_04.jsp">불복절차</a></li>
+                                            <li><a href="/kma/public/adm/system_05.jsp">담당자현황</a></li>
+                                            <li><a href="/kma/public/adm/system_06.jsp">수수료</a></li>
+                                        </ul>
+                                    </li>
+									<li><a href="https://www.open.go.kr" target="_blank">행정정보공개청구</a></li>
+									<li><a href="/kma/public/adm/system_07.jsp">비공개정보기준</a></li>
+                                    <li><a href="/kma/public/adm/info_list.jsp">정보목록</a></li>
+                                    <li><a href="/kma/public/adm/assembly_01.jsp">국회관련정보공개</a></li>
+                                    <li><a href="javascript:void(0);">연구용역정보</a>
+                                        <ul>
+                                            <li><a href="/kma/public/adm/rnd_01.jsp">연구용역정보</a></li>
+                                            <li><a href="/kma/public/adm/policy_research.jsp">정책연구</a></li>
+                                        </ul>
+                                    </li>
+									<li><a href="javascript:void(0);">예산재정정보</a>
+                                        <ul>
+                                            <li><a href="/kma/public/adm/budget_02.jsp">예산재정정보</a></li>
+                                            <li><a href="/kma/public/adm/budget_03.jsp">월별수입징수상황</a></li>
+                                            <li><a href="/kma/public/adm/budget_04.jsp">월별지출집행상황</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+							<li>
+                                <a href="javascript:void(0);"><span>사전정보공개</span></a>
+                                <ul>
+                                    <li><a href="/kma/public/adm/open_01.jsp">사전공개목록</a></li>
+                                    <li><a href="/kma/public/adm/open_02.jsp">국실별 사전정보공개</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/kma/public/data_01.jsp"><span>공공데이터개방안내</span></a>
+                            </li>
+                            <li>
+                                <a href="/kma/public/clean_policy_01.jsp"><span>정책실명제</span></a>
+                            </li>
+                            <li>
+                                <a href="/kma/public/clean_policy_02.jsp"><span>국민신청실명제</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><span>청렴자료공개</span></a>
+                                <ul>
+                                    <li><a href="/kma/public/integrity_01.jsp">반부패·청렴현황</a></li>
+                                    <li><a href="/kma/public/integrity_02.jsp">감사정보</a></li>
+                                    <li><a href="/kma/public/integrity_03.jsp">입찰·계약 현황</a></li>
+                                    <li><a href="/kma/public/integrity_04.jsp">업무추진비</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnbIntro">
+                                <dl>
+                                    <dt>정보공개</dt>
+                                    <dd>국민의 신뢰를 바탕으로</dd>
+                                </dl>
+                                <span class="bg spritepc"></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="l_title2 tile">
+                        <a href="/kma/citizen/minwon_01.jsp"><span>국민참여</span></a>
+                        <ul class="l_list_2">
+                            <li><a href="/kma/citizen/minwon_01.jsp"><span>민원이용안내</span></a></li>
+                            <li><a href="/kma/citizen/minwon_02.jsp"><span>기상민원</span></a></li>
+                            <li><a href="https://www.110.go.kr/ic.do?pi=chatCamIndicate2" target="_blank" title="새창열림"><span>110화상/채팅상담</span></a></li>
+                            <li><a href="/kma/citizen/ombudsman.jsp"><span>청렴옴부즈만</span></a></li>
+                            <li><a href="/kma/citizen/ebudget.jsp"><span>부패신고센터</span></a></li>
+                            <li><a href="/kma/citizen/proposal.jsp"><span>국민행복제안</span></a></li>
+                            <li><a href="/kma/citizen/hearing.jsp"><span>정책토론</span></a></li>
+                            <li><a href="javascript:void(0);"><span>규제신고</span></a>
+                                <ul>
+                                    <li><a href="/kma/citizen/regulation_01.jsp">규제개혁</a></li>
+                                    <li><a href="/kma/citizen/regulation_02.jsp">규제현황</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);"><span>적극행정</span></a>
+			        <ul>
+                                    <li><a href="/kma/citizen/activeadm.jsp">제도소개</a></li>
+                                    <li><a href="/kma/citizen/activeadm_02.jsp">적극행정 자료실</a></li>
+                                </ul>
+			    </li>
+                            <li><a href="/kma/citizen/discuss.jsp"><span>자유토론</span></a></li>
+                            <li class="gnbIntro">
+                                <dl>
+                                    <dt>국민참여</dt>
+                                    <dd>소통과 참여를 위해</dd>
+                                </dl>
+                                <span class="bg spritepc"></span>
+                            </li>
+                            <li class="bot">
+                                <div class="stripe">
+				    <div class="w">
+                                    	<a href="https://www.kma.go.kr/kids/index.jsp" target="_blank" title="새창열림">어린이 기상교실</a>
+                                    </div>
+                                    <div class="w">
+                                    	<a href="/kma/exp/guide.jsp">체험학습신청</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="l_title3">
+                        <a href="/kma/archive/photo_exhibition.jsp"><span>자료실</span></a>
+                        <ul class="l_list_3">
+                            <li>
+                            	<a class="list_link" href="/kma/pop/pub.jsp" target="_blank" title="새창열림" onclick="window.open(this.href,'pop_pub', 'width=1300,height=1000, scrollbars=yes, resizable=yes').focus(); return false;">
+	                                <span class="bg"></span><br>
+	                                <span class="list_content">매달, 매년 제공되는<br>다양한 간행물</span><br>     
+	                                <span class="list_title">기상간행물</span>
+                                </a>
+                            </li>
+                            <li>
+                            	<a class="list_link" href="/kma/archive/photo_exhibition.jsp">
+	                                <span class="bg"></span><br>
+	                                <span class="list_content">날씨와 자연의<br>경이로움을 담다.</span><br>
+	                                <span class="list_title">기상기후사진전</span>
+								</a>
+                            </li>
+                            <li>
+                            	<a class="list_link" href="/kma/archive/disasterpreventionvideo.jsp">
+	                                <span class="bg"></span><br>
+	                                <span class="list_content">영상을 통해<br>재해 예방을 알아가요.</span><br>                                
+	                                <span class="list_title">기상재해예방캠페인영상</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                            	<a class="list_link" href="/kma/archive/recommend_contents.jsp">
+	                                <span class="bg"></span><br>
+	                                <span class="list_content">기상청에서만<br>볼 수 있어요.</span><br>                                
+	                                <span class="list_title">추천콘텐츠</span>
+								</a>
+                            </li>-->
+                            <li class="gnbIntro">
+                                <dl>
+                                    <dt>자료실</dt>
+                                    <dd>다양한 정보를 통해</dd>
+                                </dl>
+                                <span class="bg spritepc"></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="l_title4">
+                        <a href="/kma/news/notice.jsp"><span>알림·소식</span></a>
+                        <ul class="l_list_4">
+                            <li class="type1">
+                            	<a class="list_link" href="/kma/news/notice.jsp">
+	                                <span class="bg spritepc"></span>
+	                                <span class="new">N</span>
+	                                <br><span class="list_title">공지사항</span>
+	                            </a>
+                            </li>
+                            <li class="type1">
+                            	<a class="list_link" href="/kma/news/recruit.jsp">
+	                                <span class="bg spritepc"></span>    
+	                                <br><span class="list_title">채용</span>
+                                </a>
+                            </li>
+                            <li class="type1">
+                            	<a class="list_link" href="/kma/news/hr.jsp">
+	                                <span class="bg spritepc"></span>    
+	                                <br><span class="list_title">인사</span>
+	                            </a>
+                            </li>
+                            <li class="type2">
+                                <a href="" class="top">사진으로 보는 기상청</a>
+                                <div class="box">
+                                    <a href="/kma/news/press.jsp" title="새글"><em>보도자료</em> <span class="new" style="margin-top:0px; font-size:12px;">N</span></a>
+                                    <a href="/kma/news/photo.jsp"><em>포토뉴스</em></a>
+                                </div>
+								<span>기상청 채용시스템 바로가기</span>
+								<div class="box">
+                                    <a href="https://hrm.kma.go.kr/kma_emp/hr_system/jsp/ExamPreReg/" title="새글" target="_blank" class="newch"><em>영어성적 등록</em></a>
+                                    <a href="https://hrm.kma.go.kr/kma_emp/hr_system/jsp/" title="새글" target="_blank" class="newch"><em>원서접수 및 조회</em></a>
+                                </div>
+                            </li>
+                            <li class="gnbIntro">
+                                <dl>
+                                    <dt>알림·소식</dt>
+                                    <dd>빠른 소식을 전합니다.</dd>
+                                </dl>
+                                <span class="bg spritepc"></span>
+                            </li>
+                            <li class="bot">
+                                <div class="stripe">
+                                    <div class="w">
+                                        <a href="/kma/news/recruit.jsp?bid=recruit&mode=view&num=3070">2025년도 기상직 7급&middot;9급 국가공무원<br/>공개경쟁채용시험 계획 공고</a>
+                                    </div>
+                                    <div class="w">
+                                        <a href="/kma/news/recruit.jsp?bid=recruit&mode=view&num=3071">기상직7급 공채 영어능력검정시험<br/>성적 사전등록 안내</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="l_title5 tile">
+                        <a href="/kma/biz/law_01.jsp"><span>주요업무</span></a>
+                        <ul class="l_list_5">
+                            <li class="con">
+                                <div class="tit">
+                                    <p>“하늘을 친구처럼 국민을 하늘처럼”</p>
+                                    <span class="arr"></span>
+                                </div>
+                                <div class="box">
+	                                <a href="/kma/biz/law_01.jsp"><span>법령정보</span></a>
+	                                <!--<a href="/kma/biz/affairs.jsp"><span>국정과제</span></a>-->
+	                                <a href="/kma/biz/plan_01.jsp"><span>중기발전계획</span></a>
+	                                <a href="/kma/biz/plan_02.jsp"><span>주요업무계획</span></a>
+	                                <a href="/kma/biz/perf.jsp"><span>성과관리</span></a>
+                                </div>
+                            </li>
+                            <li class="gnbIntro">
+                                <dl>
+                                    <dt>주요업무</dt>
+                                    <dd>국민의 곁에서 함께!</dd>
+                                </dl>
+                                <span class="bg spritepc"></span>
+                            </li>
+                        </ul>
+			<ul class="l_list_5_1">
+                            <li>
+                                <a href="javascript:void(0);"><span>관측업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/observation01.jsp">기상관측망</a></li>
+                                    <li><a href="/kma/biz/observation02.jsp">지상기상관측망</a></li>
+                                    <li><a href="/kma/biz/observation03.jsp">고층기상관측</a></li>
+                                    <li><a href="/kma/biz/observation04.jsp">위성기상관측</a></li>
+                                    <li><a href="/kma/biz/observation05.jsp">기상레이더관측</a></li>
+                                    <li><a href="/kma/biz/observation06.jsp">낙뢰관측</a></li>
+				    <li><a href="/kma/biz/observation07.jsp">해양기상관측</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><span>정보통신업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/ict01.jsp">기상청종합통신유선망</a></li>
+                                    <li><a href="/kma/biz/ict02.jsp">국가기상슈퍼컴퓨터센터</a></li>
+                                    <li><a href="/kma/biz/ict04.jsp">세계기상정보시스템</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>예보업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/forecast01.jsp">업무개요</a></li>
+                                    <li><a href="/kma/biz/forecast02.jsp">기상예보</a></li>
+				    <li><a href="/kma/biz/forecast03.jsp">기상정보 및 특보</a></li>
+				    <li><a href="/kma/biz/forecast04.jsp">수치예보</a></li>
+				    <li><a href="/kma/biz/forecast05.jsp">예보용어해설</a></li>
+				    <li><a href="/kma/biz/forecast06.jsp">예보평가</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>기후감시업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/climate01.jsp">기후변화감시</a></li>
+                                    <li><a href="/kma/biz/climate02.jsp">이상기후감시</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>지진·화산업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/earthquake_volcano_01.jsp">업무개요</a></li>
+                                    <li><a href="/kma/biz/earthquake_volcano_02.jsp">지진·화산 관측</a></li>
+				    <li><a href="/kma/biz/earthquake_volcano_03.jsp">지진·화산 통보</a></li>
+				    <li><a href="/kma/biz/earthquake_volcano_04.jsp">지진조기경보</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>응용기상업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/cooper01_01.jsp">항공기상분야</a></li>
+                                    <li><a href="/kma/biz/cooper01_02.jsp">생활기상정보</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>국제협력업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/cooper02.jsp">다자간기상협력</a></li>
+                                    <li><a href="/kma/biz/cooper03.jsp">양국간기상협력</a></li>
+				    <!--<li><a href="/kma/biz/cooper04.jsp">APEC기후센터</a></li>-->
+				    <li><a href="/kma/biz/cooper05.jsp">국제개발협력</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>기상산업진흥</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/biz_regist01.jsp">기상사업자등록</a></li>
+                                    <li><a href="/kma/biz/biz_intro01.jsp" class="double-line">기상사업자제도 및<br/>기상사업자 현황</a></li>
+				    <li><a href="/kma/biz/biz_license01.jsp" class="double-line">기상예보사 및<br/>기상감정사 면허제도</a></li>
+				    <li><a href="/kma/biz/biz_notice1.jsp">기상산업실태조사</a></li>
+                                </ul>
+                            </li>
+			    <li>
+                                <a href="/kma/biz/research.jsp"><span>기상연구</span></a>
+			    </li>
+			    <li>
+                                <a href="/kma/biz/service.jsp"><span>기상서비스</span></a>
+			    </li>
+			    <li>
+                                <a href="javascript:void(0);"><span>황사업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/asiandust01.jsp">관측업무</a></li>
+                                    <li><a href="/kma/biz/asiandust02.jsp">일반현황</a></li>
+				    <li><a href="/kma/biz/asiandust03.jsp">예보업무</a></li>
+				    <li><a href="/kma/biz/asiandust05.jsp">국제협력사업</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="l_title6">
+                        <a href="/kma/org/intro.jsp"><span>기관소개</span></a>
+                        <ul class="l_list_6">
+                            <li>
+                                <div class="row">
+                                    <em>기상청은 어떤 곳인가요?</em>
+                                    <a href="/kma/org/intro.jsp">기상청소개</a>
+                                    <a href="/kma/org/history.jsp">연혁</a>
+                                    <a href="/kma/org/vision.jsp">임무&middot;이상</a>
+									<a href="/kma/org/affiliated_org.jsp">소속&middot;산하기관</a>
+                                </div>
+                                <div class="row">
+                                    <em>기상청 직원이 궁금해요!</em>
+                                    <a href="/kma/org/system/chart.jsp">조직도</a>
+                                    <a href="/kma/org/system/staff.jsp">직원검색</a>
+                                    <a href="/kma/org/deputy.jsp">차장소개</a>
+                                    <a href="/kma/org/generation_01.jsp">역대기관장</a>
+                                </div>
+                                <div class="bot">
+                                    <div class="l">
+                                        <span class="bg spritepc"></span>
+                                        <div class="wrap">
+                                            <em>청장소개</em>
+                                            <p>소중한 말씀을 귀담아 듣겠습니다.</p>
+                                            <a href="/kma/org/chief/conversation.jsp">청장과의 대화</a>
+                                        </div>
+                                    </div>
+                                    <div class="c">
+                                        <a href="/kma/org/chief/greeting.jsp">청장인사</a>
+                                        <a href="/kma/org/chief/about.jsp">청장소개</a>
+                                        <a href="/kma/org/chief/schedule.jsp">일정365</a>
+                                    </div>
+                                    <div class="r">
+                                        <span class="bg spritepc"></span>
+                                        <a href="/kma/org/location.jsp" class="last-gnb-item">찾아오시는 길</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gnbIntro">
+                                <dl>
+                                    <dt>기관소개</dt>
+                                    <dd>사명감과 책임감으로</dd>
+                                </dl>
+                                <span class="bg spritepc"></span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </div><!-- E : GNB -->        
+			
+        <!-- ham = hamburger = gnb_m -->
+        <div class="ham mobile">
+            <div class="ham_top_wrap">
+                <a href="/kma/" class="home"><span>홈</span></a>
+                <div class="option">
+                    <div class="sel wd">
+                        <a href="javascript:void(0);">날씨누리</a>
+                        <ul class="target">
+                            <li><a href="/w/">날씨누리</a></li>
+                        </ul>
+                        <span class="arr"></span>
+                    </div>
+                    <div class="sel lang">
+                        <a href="javascript:void(0);">KOR</a>
+                        <ul class="target">
+                        	<li><a href="/neng">ENG</a></li>
+                            <li><a href="/nchn">CHA</a></li>
+                            <li><a href="/njpn">JPN</a></li>
+                        </ul>
+                        <span class="arr"></span>
+                    </div>
+                </div>
+                <a href="javascript:void(0);" class="ham_close"><span>햄버거메뉴 닫기</span></a>
+            </div>
+            <ul>
+                <li class="l_title1">
+                    <a href="javascript:void(0);"><span>정보공개</span></a>
+                    <ul class="l_list_1">
+                        <li>
+                            <a href="javascript:void(0);"><span>행정정보공개</span></a>
+                            <ul>
+                                <li><a href="javascript:void(0);">정보공개제도안내</a>
+                                    <ul>
+                                        <li><a href="/kma/public/adm/system_01.jsp">제도안내</a></li>
+                                        <li><a href="/kma/public/adm/system_02.jsp">처리절차</a></li>
+                                        <li><a href="/kma/public/adm/system_04.jsp">불복절차</a></li>
+                                        <li><a href="/kma/public/adm/system_05.jsp">담당자현황</a></li>
+                                        <li><a href="/kma/public/adm/system_06.jsp">수수료</a></li>
+                                    </ul>
+                                </li>
+				<li><a href="https://www.open.go.kr" target="_blank">행정정보공개청구</a></li>
+				<li><a href="/kma/public/adm/system_07.jsp">비공개정보기준</a></li>
+                                <li><a href="/kma/public/adm/info_list.jsp">정보목록</a></li>
+                                <li><a href="/kma/public/adm/assembly_01.jsp">국회관련정보공개</a></li>
+				<li><a href="javascript:void(0);">연구용역정보</a>
+   					<ul>
+                                            <li><a href="/kma/public/adm/rnd_01.jsp">연구용역정보</a></li>
+                                            <li><a href="/kma/public/adm/policy_research.jsp">정책연구</a></li>
+                                        </ul>
+                                    </li>
+                                <li><a href="javascript:void(0);">예산재정정보</a>
+                                    <ul>
+                                        <li><a href="/kma/public/adm/budget_01.jsp">예산개요</a></li>
+                                        <li><a href="/kma/public/adm/budget_02.jsp">예산재정정보</a></li>
+                                        <li><a href="/kma/public/adm/budget_03.jsp">월별수입징수상황</a></li>
+                                        <li><a href="/kma/public/adm/budget_04.jsp">월별지출집행상황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+						<li>
+                            <a href="javascript:void(0);"><span>사전정보공개</span></a>
+                            <ul>
+								<li><a href="/kma/public/adm/open_01.jsp">사전공개목록</a></li>
+								<li><a href="/kma/public/adm/open_02.jsp">국실별 사전정보공개</a></li>
+							</ul>
+                        </li>
+                        <li>
+                            <a href="/kma/public/data_01.jsp"><span>공공데이터개방안내</span></a>
+                        </li>
+                        <li>
+                            <a href="/kma/public/clean_policy_01.jsp"><span>정책실명제</span></a>
+                        </li>
+                        <li>
+                            <a href="/kma/public/clean_policy_02.jsp"><span>국민신청실명제</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>청렴자료공개</span></a>
+                            <ul>
+                                <li><a href="/kma/public/integrity_01.jsp">반부패·청렴현황</a></li>
+                                <li><a href="/kma/public/integrity_02.jsp">감사정보</a></li>
+                                <li><a href="/kma/public/integrity_03.jsp">입찰·계약 현황</a></li>
+                                <li><a href="/kma/public/integrity_04.jsp">업무추진비</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="l_title2">
+                    <a href="javascript:void(0);"><span>국민참여</span></a>                    
+                    <ul class="l_list_2">
+                        <li><a href="/kma/citizen/minwon_01.jsp"><span>민원이용안내</span></a></li>
+                        <li><a href="/kma/citizen/minwon_02.jsp"><span>기상민원</span></a></li>
+                        <li><a href="https://www.110.go.kr/ic.do?pi=chatCamIndicate2" target="_blank" title="새창열림"><span>110화상/채팅상담</span></a></li>
+                        <li><a href="/kma/citizen/ombudsman.jsp"><span>청렴옴부즈만</span></a></li>
+                        <li><a href="/kma/citizen/ebudget.jsp"><span>부패신고센터</span></a></li>
+                        <li><a href="/kma/citizen/proposal.jsp"><span>국민행복제안</span></a></li>
+                        <li><a href="/kma/citizen/hearing.jsp"><span>정책토론</span></a></li>
+                        <li><a href="javascript:void(0);"><span>규제신고</span></a>
+                            <ul>
+                                <li><a href="/kma/citizen/regulation_01.jsp">규제개혁</a></li>
+                                <li><a href="/kma/citizen/regulation_02.jsp">규제현황</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0);"><span>적극행정</span></a>
+			    <ul>
+                                <li><a href="/kma/citizen/activeadm.jsp">제도소개</a></li>
+                                <li><a href="/kma/citizen/activeadm_02.jsp">적극행정 자료실</a></li>
+
+                            </ul>
+			</li>
+                        <li><a href="/kma/citizen/discuss.jsp"><span>자유토론</span></a></li>
+						<li><a href="/kids/index.jsp"><span>어린이 기상교실</span></a></li>
+						<li><a href="/kma/exp/guide.jsp"><span>체험학습 신청</span></a></li>
+                    </ul>
+                </li>
+                <li class="l_title3">
+                    <a href="javascript:void(0);"><span>자료실</span></a>
+                    <ul class="l_list_3">
+                        <li><a href="/kma/pop/pub.jsp"><span>기상간행물</span></a></li>
+                        <li><a href="/kma/archive/photo_exhibition.jsp"><span>기상기후사진전</span></a></li>
+                        <li><a href="/kma/archive/disasterpreventionvideo.jsp"><span>기상재해예방캠페인영상</span></a></li>
+                        <!--<li><a href="/kma/archive/recommend_contents.jsp"><span>추천콘텐츠</span></a></li>-->
+                    </ul>
+                </li>
+                <li class="l_title4">
+                    <a href="javascript:void(0);"><span>알림·소식</span></a>
+                    <ul class="l_list_4">
+                        <li><a href="/kma/news/notice.jsp"><span>공지사항</span></a></li>
+                        <li><a href="/kma/news/press.jsp"><span>보도자료</span></a></li>
+                        <li><a href="/kma/news/photo.jsp"><span>포토뉴스</span></a></li>
+                        <li><a href="/kma/news/recruit.jsp"><span>채용</span></a></li>
+                        <li><a href="/kma/news/hr.jsp"><span>인사</span></a></li>
+                    </ul>
+                </li>
+                <li class="l_title5">
+                    <a href="javascript:void(0);"><span>주요업무</span></a>
+                    <ul class="l_list_5">
+                        <li><a href="/kma/biz/law_01.jsp"><span>법령정보</span></a></li>
+                        <!--<li><a href="/kma/biz/affairs.jsp"><span>국정과제</span></a></li>-->
+                        <li><a href="/kma/biz/plan_01.jsp"><span>중기발전계획</span></a></li>
+                        <li><a href="/kma/biz/plan_02.jsp"><span>주요업무계획</span></a></li>
+                        <li><a href="/kma/biz/perf.jsp"><span>성과관리</span></a></li>
+			<li><a href="javascript:void(0);"><span>관측업무</span></a>
+				<ul>
+	                            <li><a href="/kma/biz/observation01.jsp">기상관측망</a></li>
+	                            <li><a href="/kma/biz/observation02.jsp">지상기상관측망</a></li>
+	                            <li><a href="/kma/biz/observation03.jsp">고층기상관측</a></li>
+	                            <li><a href="/kma/biz/observation04.jsp">위성기상관측</a></li>
+	                            <li><a href="/kma/biz/observation05.jsp">기상레이더관측</a></li>
+	                            <li><a href="/kma/biz/observation06.jsp">낙뢰관측</a></li>
+				    <li><a href="/kma/biz/observation07.jsp">해양기상관측</a></li>
+	                        </ul>
+	                    </li>
+                            <li><a href="javascript:void(0);"><span>정보통신업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/ict01.jsp">기상청종합통신유선망</a></li>
+                                    <li><a href="/kma/biz/ict02.jsp">국가기상슈퍼컴퓨터센터</a></li>
+                                    <li><a href="/kma/biz/ict04.jsp">세계기상정보시스템</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="javascript:void(0);"><span>예보업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/forecast01.jsp">업무개요</a></li>
+                                    <li><a href="/kma/biz/forecast02.jsp">기상예보</a></li>
+				    <li><a href="/kma/biz/forecast03.jsp">기상정보 및 특보</a></li>
+				    <li><a href="/kma/biz/forecast04.jsp">수치예보</a></li>
+				    <li><a href="/kma/biz/forecast05.jsp">예보용어해설</a></li>
+				    <li><a href="/kma/biz/forecast06.jsp">예보평가</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="javascript:void(0);"><span>기후감시업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/climate01.jsp">기후변화감시</a></li>
+                                    <li><a href="/kma/biz/climate02.jsp">이상기후감시</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="javascript:void(0);"><span>지진·화산업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/earthquake_volcano_01.jsp">업무개요</a></li>
+                                    <li><a href="/kma/biz/earthquake_volcano_02.jsp">지진·화산 관측</a></li>
+				    <li><a href="/kma/biz/earthquake_volcano_03.jsp">지진·화산 통보</a></li>
+				    <li><a href="/kma/biz/earthquake_volcano_04.jsp">지진조기경보</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="javascript:void(0);"><span>응용기상업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/cooper01_01.jsp">항공기상분야</a></li>
+                                    <li><a href="/kma/biz/cooper01_02.jsp">생활기상정보</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="javascript:void(0);"><span>국제협력업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/cooper02.jsp">다자간기상협력</a></li>
+                                    <li><a href="/kma/biz/cooper03.jsp">양국간기상협력</a></li>
+				    <!--<li><a href="/kma/biz/cooper04.jsp">APEC기후센터</a></li>-->
+				    <li><a href="/kma/biz/cooper05.jsp">국제개발협력</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="javascript:void(0);"><span>기상산업진흥</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/biz_regist01.jsp">기상사업자등록</a></li>
+                                    <li><a href="/kma/biz/biz_intro01.jsp" class="double-line">기상사업자제도 및 기상사업자 현황</a></li>
+				    <li><a href="/kma/biz/biz_license01.jsp" class="double-line">기상예보사 및 기상감정사 면허제도</a></li>
+				    <li><a href="/kma/biz/biz_notice1.jsp">기상산업실태조사</a></li>
+                                </ul>
+                            </li>
+			    <li><a href="/kma/biz/research.jsp"><span>기상연구</span></a>
+			    </li>
+			    <li><a href="/kma/biz/service.jsp"><span>기상서비스</span></a>
+			    </li>
+			    <li><a href="javascript:void(0);"><span>황사업무</span></a>
+                                <ul>
+                                    <li><a href="/kma/biz/asiandust01.jsp">관측업무</a></li>
+                                    <li><a href="/kma/biz/asiandust02.jsp">일반현황</a></li>
+				    <li><a href="/kma/biz/asiandust03.jsp">예보업무</a></li>
+				    <li><a href="/kma/biz/asiandust05.jsp">국제협력사업</a></li>
+                                </ul>
+                            </li>
+                    </ul>
+                </li>
+                <li class="l_title6">
+                    <a href="javascript:void(0);"><span>기관소개</span></a>
+                    <ul class="l_list_6">
+                        <li><a href="/kma/org/intro.jsp"><span>기상청소개</span></a></li>
+                        <li><a href="/kma/org/vision.jsp"><span>임무&middot;이상</span></a>
+                            <ul>
+                                <li><a href="/kma/org/vision.jsp"><span>임무&middot;이상</span></a></li>
+                                <li><a href="/kma/org/history.jsp"><span>연혁</span></a></li>
+                            </ul>
+                        </li>
+						<li><a href="/kma/org/affiliated_org.jsp"><span>소속&middot;산하기관</span></a></li>
+                        <li><a href="/kma/org/chief/greeting.jsp"><span>청장소개</span></a>
+                            <ul>
+                                <li><a href="/kma/org/chief/greeting.jsp"><span>청장인사말</span></a></li>
+                                <li><a href="/kma/org/chief/about.jsp"><span>청장소개</span></a></li>
+                                <li><a href="/kma/org/chief/schedule.jsp"><span>일정365</span></a></li>
+                                <li><a href="/kma/org/chief/conversataion.jsp"><span>청장과의 대화</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/kma/org/deputy.jsp"><span>차장소개</span></a></li>
+                        <li><a href="/kma/org/generation_01.jsp"><span>역대 기관장</span></a>
+                            <ul>
+                                <li><a href="/kma/org/generation_01.jsp"><span>기상청장/차장</span></a></li>
+                                <li><a href="/kma/org/generation_02.jsp"><span>기상대장</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/kma/org/system/chart.jsp"><span>조직/직원안내</span></a>
+                            <ul>
+                                <li><a href="/kma/org/system/chart.jsp"><span>조직도</span></a></li>
+                                <li><a href="/kma/org/system/staff.jsp"><span>부서/직원검색</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/kma/org/location.jsp"><span>오시는 길</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- E : ham -->
+		</div><!-- //.gnb_wrap -->
+	</div><!-- //#header -->
+
+
+		<div id="container">
+			<div class="error">
+				<div class="main">
+					<p class="heading"><em>&ldquo;</em>서비스 이용에 불편을 드려 죄송합니다.<em>&rdquo;</em></p>
+					<p>서비스 장애가 계속될 경우, 아래로 문의 바랍니다.</p>
+					<p class="email">이메일: <a href="mailto:webmasterkma@korea.kr">webmasterkma@korea.kr</a></p>
+					<p class="email">전화: <a href='tel:02-2181-0900'>(02)2181-0900</a>, <a href='tel:042-481-7500'>(042)481-7500</a><br/>
+					기상 관련 문의: 기상콜센터(131)					
+					</p>
+				</div>
+				<div class="txt">
+					<p>
+						※ 날씨누리에 접속 시 해당화면이 나타났다면 다음을 확인해주세요.<br>
+						- 『 <a href="https://www.weather.go.kr/w/index.do" target="_blank">www.weather.go.kr/w/</a> 』 로 시작되는 URL로 접속<br>
+						- 기상청 날씨누리는 『 <a href="https://www.weather.go.kr/w/index.do" target="_blank">www.weather.go.kr/w/</a> 』 시작되는 페이지만 운영합니다.(21년 이후)<br>
+						- 그 외 접속 페이지는 현재 서비스 및 관리를 하지 않는 페이지 임을 알려드립니다.					
+					</p>
+				</div>
+			</div>
+		</div>
+		
+	
+	
+	<div id="footer">
+		<div class="f_top_wrap">
+			<div class="f_top">
+				
+			</div>
+		</div>
+		<div class="f_bot_wrap">
+			<div class="f_bot">
+				<div class="f_1st">
+					<p class="f_logo sprite">기상청</p>
+				</div>
+				<div class="f_2nd">
+					<div class="f_con_top">
+						<a href="/kma/guide/privacy.jsp" style="font-weight:600;">개인정보처리방침</a>
+						<a href="/kma/guide/siteinfo.jsp">이용안내</a>
+						<a href="/kma/guide/faq.jsp">자주 묻는 질문</a>
+						<a href="/kma/guide/copyright.jsp">저작권보호 및 정책</a>
+						<a href="/kma/guide/accessibility.jsp">웹접근성</a>
+						<a href="/kma/guide/feedback.jsp">정책누리집오류&amp;건의</a>
+						<a href="/kma/org/system/chart.jsp">전화번호안내</a>
+						<a href="/kma/org/system/staff.jsp">부서&amp;직원찾기</a>
+						<a href="/kma/guide/viewer.jsp">문서보기 프로그램 내려받기</a>
+					</div>
+					<div class="f_con_mid">
+						<ul>
+							<li><a href="javascript:void(0);" title="열기">기상청소속기관</a>
+								<ul class="link_list">
+									<li><a href="http://www.kma.go.kr/metropolitan/html/main/index.jsp" target="_blank" title="새창열림">수도권기상청</a></li>
+									<li><a href="http://www.kma.go.kr/busan/html/main/index.jsp" target="_blank" title="새창열림">부산지방기상청</a></li>
+									<li><a href="http://www.kma.go.kr/gwangju/html/main/index.jsp" target="_blank" title="새창열림">광주지방기상청</a></li>
+									<li><a href="http://www.kma.go.kr/gangwon/html/main/index.jsp" target="_blank" title="새창열림">강원지방기상청</a></li>
+									<li><a href="http://www.kma.go.kr/daejeon/html/main/index.jsp" target="_blank" title="새창열림">대전지방기상청</a></li>
+									<li><a href="http://www.kma.go.kr/daegu/html/main/index.jsp" target="_blank" title="새창열림">대구지방기상청</a></li>
+									<li><a href="http://www.kma.go.kr/jeju/html/main/index.jsp" target="_blank" title="새창열림">제주지방기상청</a></li>
+									<li><a href="http://www.kma.go.kr/cheongju/html/main/index.jsp" target="_blank" title="새창열림">청주기상지청</a></li>
+									<li><a href="http://www.kma.go.kr/jeonju/html/main/index.jsp" target="_blank" title="새창열림">전주기상지청</a></li>
+									<li><a href="http://www.kma.go.kr/nmc/html/main/index.jsp" target="_blank" title="새창열림">수치모델링센터</a></li>
+									<li><a href="http://www.kma.go.kr/mhi" target="_blank" title="새창열림">기상기후인재개발원</a></li>
+									<li><a href="http://nmsc.kma.go.kr" target="_blank" title="새창열림">국가기상위성센터</a></li>
+									<li><a href="http://amo.kma.go.kr" target="_blank" title="새창열림">항공기상청</a></li>
+									<li><a href="http://www.nims.go.kr/" target="_blank" title="새창열림">국립기상과학원</a></li>
+									<li><a href="http://radar.kma.go.kr" target="_blank" title="새창열림">기상레이더센터</a></li>
+									<li><a href="http://www.kma.go.kr/super" target="_blank" title="새창열림">국가기상슈퍼컴퓨터센터</a></li>									
+								</ul>
+								<span class="arr sprite"></span>
+							</li>
+							<li><a href="javascript:void(0);" title="열기">주요행정기관</a>
+								<ul class="link_list">
+									<li><a href="http://www.president.go.kr/" target="_blank" title="새창열림">대한민국 대통령실</a></li>
+									<li><a href="http://www.opm.go.kr/" target="_blank" title="새창열림">국무총리실</a></li>
+									<li><a href="http://www.bai.go.kr/" target="_blank" title="새창열림">감사원</a></li>
+									<li><a href="http://www.nis.go.kr/" target="_blank" title="새창열림">국가정보원</a></li>
+									<li><a href="http://www.kcc.go.kr/" target="_blank" title="새창열림">방송통신위원회</a></li>
+									<li><a href="http://www.humanrights.go.kr/" target="_blank" title="새창열림">국가인권위원회</a></li>
+									<li><a href="http://www.ftc.go.kr/" target="_blank" title="새창열림">공정거래위원회</a></li>
+									<li><a href="http://www.fsc.go.kr/" target="_blank" title="새창열림">금융위원회</a></li>
+									<li><a href="http://www.acrc.go.kr/" target="_blank" title="새창열림">국민권익위원회</a></li>
+									<li><a href="http://nas.na.go.kr/" target="_blank" title="새창열림">국회사무처</a></li>
+									<li class="devide"><a href="" target="_blank" title="새창열림">[ 19부 ]</a></li>
+									<li><a href="http://www.moef.go.kr/" target="_blank" title="새창열림">기획재정부</a></li>
+									<li><a href="http://www.msit.go.kr/" target="_blank" title="새창열림">과학기술정보통신부</a></li>
+									<li><a href="http://www.moe.go.kr/" target="_blank" title="새창열림">교육부</a></li>
+									<li><a href="http://www.mofat.go.kr" target="_blank" title="새창열림">외교부</a></li>
+									<li><a href="http://www.unikorea.go.kr/" target="_blank" title="새창열림">통일부</a></li>
+									<li><a href="http://www.moj.go.kr/" target="_blank" title="새창열림">법무부</a></li>
+									<li><a href="http://www.mnd.go.kr/" target="_blank" title="새창열림">국방부</a></li>
+									<li><a href="http://www.mois.go.kr/" target="_blank" title="새창열림">행정안전부</a></li>
+									<li><a href="http://www.mpva.go.kr/" target="_blank" title="새창열림">국가보훈부</a></li>
+									<li><a href="http://www.mcst.go.kr/" target="_blank" title="새창열림">문화체육관광부</a></li>
+									<li><a href="http://www.mafra.go.kr/" target="_blank" title="새창열림">농림축산식품부</a></li>
+									<li><a href="http://www.motie.go.kr/www/main.do" target="_blank" title="새창열림">산업통상자원부</a></li>
+									<li><a href="http://www.mohw.go.kr/" target="_blank" title="새창열림">보건복지부</a></li>
+									<li><a href="http://www.me.go.kr/" target="_blank" title="새창열림">환경부</a></li>
+									<li><a href="http://www.moel.go.kr/" target="_blank" title="새창열림">고용노동부</a></li>
+									<li><a href="http://www.mogef.go.kr/" target="_blank" title="새창열림">여성가족부</a></li>
+									<li><a href="http://www.molit.go.kr/" target="_blank" title="새창열림">국토교통부</a></li>
+									<li><a href="http://www.mof.go.kr/" target="_blank" title="새창열림">해양수산부</a></li>
+									<li><a href="http://www.smba.go.kr/" target="_blank" title="새창열림">중소벤처기업부</a></li>
+									<li class="devide"><a href="javascript:void(0);" target="_blank" title="새창열림">[ 3처 ]</a></li>		
+									<li><a href="http://www.mpm.go.kr" target="_blank" title="새창열림">인사혁신처</a></li>
+									<li><a href="http://www.moleg.go.kr/" target="_blank" title="새창열림">법제처</a></li>
+									<li><a href="http://www.mfds.go.kr/" target="_blank" title="새창열림">식품의약품안전처</a></li>							
+									<li class="devide"><a href="" target="_blank" title="새창열림">[ 20청 ]</a></li>
+									<li><a href="http://www.nts.go.kr/" target="_blank" title="새창열림">국세청</a></li>
+									<li><a href="http://www.customs.go.kr/" target="_blank" title="새창열림">관세청</a></li>
+									<li><a href="http://www.pps.go.kr/" target="_blank" title="새창열림">조달청</a></li>
+									<li><a href="http://kostat.go.kr/" target="_blank" title="새창열림">통계청</a></li>
+									<li><a href="http://oka.go.kr/" target="_blank" title="새창열림">재외동포청</a></li>
+									<li><a href="http://www.spo.go.kr/" target="_blank" title="새창열림">검찰청</a></li>
+									<li><a href="http://www.mma.go.kr/" target="_blank" title="새창열림">병무청</a></li>
+									<li><a href="http://www.dapa.go.kr/" target="_blank" title="새창열림">방위사업청</a></li>
+									<li><a href="http://www.police.go.kr/" target="_blank" title="새창열림">경찰청</a></li>
+									<li><a href="http://www.nfa.go.kr/nfa/" target="_blank" title="새창열림">소방청</a></li>
+									<li><a href="http://www.khs.go.kr" target="_blank" title="새창열림">국가유산청</a></li>
+									<li><a href="http://www.rda.go.kr/" target="_blank" title="새창열림">농촌진흥청</a></li>
+									<li><a href="http://www.forest.go.kr/" target="_blank" title="새창열림">산림청</a></li>
+									<li><a href="http://www.kipo.go.kr/" target="_blank" title="새창열림">특허청</a></li>
+									<li><a href="http://www.kdca.go.kr" target="_blank" title="새창열림">질병관리청</a></li>							
+									<li><a href="http://www.kma.go.kr/" target="_blank" title="새창열림">기상청</a></li>
+									<li><a href="http://www.naacc.go.kr/" target="_blank" title="새창열림">행정중심복합도시건설청</a></li>
+									<li><a href="http://www.saemangeum.go.kr/" target="_blank" title="새창열림">새만금개발청</a></li>	
+									<li><a href="http://www.kcg.go.kr" target="_blank" title="새창열림">해양경찰청</a></li>
+									<li><a href="http://kasa.go.kr" target="_blank" title="새창열림">우주항공청</a></li>
+								</ul>
+								<span class="arr sprite"></span>
+							</li>
+							<li><a href="javascript:void(0);" title="열기">방재유관기관</a>
+								<ul class="link_list">
+									<li><a href="http://119.seoul.go.kr/" target="_blank" title="새창열림">서울종합방재센터</a></li>
+									<li><a href="http://www.ndmi.go.kr" target="_blank" title="새창열림">국립재난안전연구원</a></li>
+									<li><a href="http://www.hrfco.go.kr/" target="_blank" title="새창열림">한강홍수통제소</a></li>
+									<li><a href="http://www.mois.go.kr/frt/a01/frtMain.do" target="_blank" title="새창열림">중앙재난안전대책본부</a></li>
+									<li><a href="http://www.airkorea.or.kr" target="_blank" title="새창열림">대기오염도실시간공개</a></li>
+									<li><a href="http://www.wamis.go.kr" target="_blank" title="새창열림">국가수자원관리종합정보시스템</a></li>	
+									<li><a href="http://d.kbs.co.kr" target="_blank" title="새창열림">KBS재난포털</a></li>	
+								</ul>
+								<span class="arr sprite"></span>
+							</li>
+							<li><a href="javascript:void(0);" title="열기">외국기상청</a>
+								<ul class="link_list">
+									<li><a href="http://www.weather.gov/" target="_blank" title="새창열림">미국</a></li>
+									<li><a href="http://www.jma.go.jp" target="_blank" title="새창열림">일본</a></li>
+									<li><a href="http://www.cma.gov.cn" target="_blank" title="새창열림">중국</a></li>
+									<li><a href="http://www.metoffice.gov.uk/" target="_blank" title="새창열림">영국</a></li>
+									<li><a href="http://www.meteofrance.com" target="_blank" title="새창열림">프랑스</a></li>
+									<li><a href="http://www.wmo.int" target="_blank" title="새창열림">세계기상기구WMO</a></li>
+								</ul>
+								<span class="arr sprite"></span>
+							</li>
+							<li><a href="javascript:void(0);" title="열기">기상관련단체</a>
+								<ul class="link_list">
+									<li><a href="http://www.kmiti.or.kr" target="_blank" title="새창열림">한국기상산업기술원</a></li>
+									<li><a href="http://www.apcc21.org" target="_blank" title="새창열림">APEC기후센터</a></li>
+									<li><a href="http://www.kiaps.org" target="_blank" title="새창열림">차세대수치예보모델개발사업단</a></li>
+								</ul>
+								<span class="arr sprite"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="f_con_bot">
+						<p>대전 (35208) 대전광역시 서구 청사로 189 정부대전청사 1동 11~14층<br>
+						서울 (07062) 서울특별시 동작구 여의대방로16길 61<br>
+						<span class="mobile_i">전화</span> <a href='tel:02-2181-0900'>(02)2181-0900</a>, <a href='tel:042-481-7500'>(042)481-7500</a> | 
+						<!--<span class="pc">(평일 9:00~18:00, 평일 18:00 이후 및 야간휴일은 131기상콜센터 연결)</span><br/>-->
+						<span>전자우편(웹사이트 관련 문의):  webmasterkma@korea.kr</span><br/>
+						기상청 업무에 관한 문의는 
+						<a href="https://www.epeople.go.kr/nep/pttn/gnrlPttn/PttnRqstWrtnInfo.paid" target="_blank" style="font-weight: 600;">국민신문고</a>를 이용해주시기 바랍니다.<br/>
+						<span class="f_con_13"><span class="pc">본 누리집에 게시된 전자우편 주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</span><br/>
+						Copyright © 2022 KMA. All Rights RESERVED</span></p>
+						<div class="mark">
+							<a href="https://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do" target="_blank">
+								<img src="/kma/resources/images/img_korea_symbol_black.png" alt="국가상징 알아보기">
+							</a>
+							<img src="/kma/resources/images/common/2024_callcenter_mark.png" alt="전국 국번없이 기상콜센터 131(유료)">&nbsp;
+							<!-- <img src="/kma/resources/images/common/f_3rd_2.png" alt="OPEN 출처표시, 공공누리 공공저작물 자유이용허락"> -->
+							<a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank"><img src="/kma/resources/images/common/f_3rd_1_25.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)" width="50"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- START OF LOGGER TRACKING SCRIPT -->
+	<!--<script src="/kma/resources/js/logger2.weather.go.kr.1057.js"></script>-->
+	<noscript><img  alt="로그" src="https://logger.kma.go.kr/tracker.tsp?u=7&amp;js=N" width="0" height="0" /></noscript>
+	<!-- END OF LOGGER TRACKING SCRIPT -->
+	<script src="/kma/resources/js/UserScriptConf.js"></script>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>기상청 1개월 전망</title>
+<item>
+<description>
+<weather_forecast>
+<week>
+<week1_period>09.02.~09.08.</week1_period>
+<week1_weather_review>고기압 영향으로 맑고 더움</week1_weather_review>
+</week>
+<week>
+<week2_period>09.09.~09.15.</week2_period>
+<week2_weather_review>고기압과 저기압 교대 영향</week2_weather_review>
+</week>
+<week>
+<week3_period>09.16.~09.22.</week3_period>
+<week3_weather_review>가을철 날씨로 변화</week3_weather_review>
+</week>
+<week>
+<week4_period>09.23.~09.29.</week4_period>
+<week4_weather_review>평년 수준의 기온과 강수량</week4_weather_review>
+</week>
+</weather_forecast>
+</description>
+</item>
+</channel>
+</rss>
